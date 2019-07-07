@@ -18,6 +18,10 @@ $db->connecteren();
     
     <!-- css style -->
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- lettertypes -->
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+
 </head>
 <body>
     

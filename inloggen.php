@@ -8,6 +8,10 @@
 
     <!-- css style -->
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- lettertypes -->
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+
 </head>
 <body>
 
@@ -25,7 +29,7 @@
 
         <!-- wachtwoord veld -->
         <div class="formuliergroep">
-            <input class="formulier" type="text" name="wachtwoord" placeholder="Wachtwoord">
+            <input class="formulier" type="password" name="wachtwoord" placeholder="Wachtwoord">
         </div>
         
         <!-- knop Bevestigen -->
@@ -33,8 +37,8 @@
             <input class="knop" type="submit" value="Bevestigen">
         </div>
 
-        <a href="#" class="wachtwoordver">Wachtwoord vergeten?</a>    
-        <a href="#" class="registreerlink">Nog geen account? <span>Registreren</span></a>
+        <a href="#" class="wachtwoordver">Wachtwoord vergeten?</a>   
+        <p>Nog geen account?<a href="#" class="registreerlink"> Registreren</a></p>
     </form>
 
 </div>

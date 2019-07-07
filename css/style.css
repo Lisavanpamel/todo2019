@@ -1,0 +1,87 @@
+#container {
+    max-width: 410px;
+    margin: 0px auto;
+    border: 2px solid bisque;
+
+    /* moet nog weg na invoegin logo */
+    padding-top: 250px;
+
+}
+
+.body{
+    font-family: 'Lato', sans-serif;
+}
+
+/* ////////////// inloggen ////////////// */
+.inloggen {
+    font-family: 'Lato', sans-serif;
+    background-image:url(../images/achtergrond.png);
+    height: 430px;
+    background-position: 0px 223px;
+    background-repeat: no-repeat;
+}
+
+.formulier, .knop {
+    margin-left: 40px;
+    width: 300px;
+    height: 35px;
+    margin-bottom: 20px;
+    border-radius: 30px;
+    border: none;
+    background-color: #F5F5F5;
+    padding-left: 20px;
+}
+
+.knop {
+    width: 320px;
+    background-color: #02C7C0;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.inloggen form input[value="Aanmelden"]{
+    background-color: #fff;
+    border: none;
+    margin-left: 40px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    font-size: 1.1em;
+    color: #02C7C0;
+    border-bottom: 5px solid #02C7C0;
+    padding-bottom: 7px;
+}
+
+.inloggen form input[value="Registreren"]{
+    background-color: #fff;
+    border: none;
+    margin-right: 40px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    font-size: 1.1em;
+    float: right;
+    padding-bottom: 7px;
+    color: #868686;
+}
+
+.wachtwoordver {
+    color: #02C7C0;
+    margin-left: 40px;
+    font-size: 0.9em;
+    text-decoration: none;
+}
+
+.inloggen p {
+    color: #868686;
+    text-align: center;
+    font-size: 0.9em;
+    text-decoration: none;
+    padding-top: 30px;
+}
+
+.registreerlink {
+    font-size: 0.9em;
+    text-decoration: none;
+    color: #02C7C0;
+}
+/* ////////////// einde inloggen ////////////// */
