@@ -22,6 +22,11 @@
         <input type="button" value="Aanmelden">
         <input type="button" value="Registreren">
 
+        <!-- error -> hier komt nog php script -->
+        <div class="error">
+            <p>Gelieve gegevens in te geven!</p>
+        </div>
+
         <!-- email veld -->
         <div class="formuliergroep">
             <input class="formulier" type="text" name="email" placeholder="Email">
@@ -38,7 +43,7 @@
         </div>
 
         <a href="#" class="wachtwoordver">Wachtwoord vergeten?</a>   
-        <p>Nog geen account?<a href="#" class="registreerlink"> Registreren</a></p>
+        <p class="geenAccount">Nog geen account?<a href="#" class="registreerlink"> Registreren</a></p>
     </form>
 
 </div>

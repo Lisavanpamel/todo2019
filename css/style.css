@@ -1,23 +1,39 @@
 #container {
     max-width: 410px;
     margin: 0px auto;
-    border: 2px solid bisque;
+    /*border: 2px solid bisque*/
 
     /* moet nog weg na invoegin logo */
-    padding-top: 250px;
+    padding-top: 180px; /* 250px */
+    margin-top: 100px;
+
+    background-color: #fff;
 
 }
 
-.body{
+html {
+    background-color: #E3E3E3;
+}
+
+body{
     font-family: 'Lato', sans-serif;
+}
+
+.error p {
+    border: 2px solid #F5A8AD;
+    background-color: #FAD2D4;
+    color: #E20613;
+    border-radius: 4px;
+    margin: 0px 50px 30px 40px;
+    font-size: 0.9em;
+    padding: 18px 15px;
 }
 
 /* ////////////// inloggen ////////////// */
 .inloggen {
-    font-family: 'Lato', sans-serif;
     background-image:url(../images/achtergrond.png);
-    height: 430px;
-    background-position: 0px 223px;
+    height: 500px; /* 430px */
+    background-position: 0px 294px; /* 0px 224px */
     background-repeat: no-repeat;
 }
 
@@ -38,6 +54,10 @@
     color: #fff;
     text-transform: uppercase;
     font-weight: bold;
+}
+
+.knop:hover {
+    background-color: #69EAC5;
 }
 
 .inloggen form input[value="Aanmelden"]{
@@ -71,7 +91,7 @@
     text-decoration: none;
 }
 
-.inloggen p {
+.geenAccount {
     color: #868686;
     text-align: center;
     font-size: 0.9em;
@@ -83,5 +103,9 @@
     font-size: 0.9em;
     text-decoration: none;
     color: #02C7C0;
+}
+
+.inloggen form input[value="Registreren"]:hover{  
+    color:  #02C7C0;
 }
 /* ////////////// einde inloggen ////////////// */
