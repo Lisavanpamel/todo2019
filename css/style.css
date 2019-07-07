@@ -4,7 +4,7 @@
     /*border: 2px solid bisque*/
 
     /* moet nog weg na invoegin logo */
-    padding-top: 160px; /* 250px */
+    padding-top: 170px; /* 250px */
     margin-top: 80px;
 
     background-color: #fff;
@@ -32,8 +32,8 @@ body{
 /* ////////////// inloggen ////////////// */
 .inloggen {
     background-image:url(../images/achtergrond.png);
-    height: 560px; /* 430px */
-    background-position: 0px 354px; /* 0px 224px */
+    height: 550px; /* 430px */
+    background-position: 0px 344px; /* 0px 224px */
     background-repeat: no-repeat;
 }
 
@@ -57,7 +57,7 @@ body{
 }
 
 .knop:hover {
-    background-color: #69EAC5;
+    background-color: #7056CB;
 }
 
 .inloggen form input[value="Aanmelden"]{
@@ -96,7 +96,7 @@ body{
     text-align: center;
     font-size: 0.9em;
     text-decoration: none;
-    padding-top: 30px;
+    padding-top: 20px;
 }
 
 .registreerlink, .inloglink {
@@ -105,7 +105,9 @@ body{
     color: #02C7C0;
 }
 
-.inloggen form input[value="Registreren"]:hover{  
-    color:  #02C7C0;
-}
+/*.inloggen form input[value="Registreren"]:hover{  
+    color:  #7056CB;
+}*/
 /* ////////////// einde inloggen ////////////// */
+
+/* ////////////// registreren ////////////// */ 

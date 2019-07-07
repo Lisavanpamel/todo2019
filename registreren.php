@@ -44,11 +44,11 @@
         
         <!-- knop Bevestigen -->
         <div class="formuliergroep">
-            <input class="knop" type="submit" value="Bevestig account">
+            <input class="knop" type="submit" value="Account Bevestigen">
         </div>
 
         <a href="#" class="wachtwoordver">Wachtwoord vergeten?</a>   
-        <p class="geenAccount">Heb je al een account?<a href="#" class="inloglink"> Inloggen</a></p>
+        <p class="geenAccount">Heb je al een account?<a href="inloggen.php" class="inloglink"> Inloggen</a></p>
     </form>
 
 </div>

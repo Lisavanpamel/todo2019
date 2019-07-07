@@ -43,7 +43,7 @@
         </div>
 
         <a href="#" class="wachtwoordver">Wachtwoord vergeten?</a>   
-        <p class="geenAccount">Nog geen account?<a href="#" class="registreerlink"> Registreren</a></p>
+        <p class="geenAccount">Nog geen account?<a href="registreren.php" class="registreerlink"> Registreren</a></p>
     </form>
 
 </div>
