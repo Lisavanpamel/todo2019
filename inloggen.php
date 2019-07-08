@@ -1,7 +1,7 @@
 <?php
     if (!empty($_POST)){
         // Waarden uit tekstvelden halen
-        $gebruikersnaam = $_POST['email'];
+        $email = $_POST['email'];
         $wachtwoord = $_POST['wachtwoord'];
 
 

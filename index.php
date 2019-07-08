@@ -1,6 +1,7 @@
 <?php
 // bestanden toevoegen 
-include_once("classes/Database.php"); 
+include_once("classes/Database.php");
+include_once("classes/Gebruiker.php"); 
 
 // connectie met db testen
 $db = new Database(); 
