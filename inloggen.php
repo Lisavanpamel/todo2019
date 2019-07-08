@@ -19,8 +19,8 @@
 <div class="inloggen">
     <form method="post">
         <!-- knoppen -->
-        <input type="button" value="Aanmelden">
-        <input type="button" value="Registreren">
+        <input class="aanmeldNav" type="button" value="Aanmelden">
+        <input class="registreerNav" type="button" value="Registreren">
 
         <!-- error -> hier komt nog php script -->
         <div class="error">

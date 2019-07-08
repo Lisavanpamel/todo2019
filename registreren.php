@@ -19,8 +19,8 @@
 <div class="inloggen">
     <form method="post">
         <!-- knoppen -->
-        <input type="button" value="Aanmelden">
-        <input type="button" value="Registreren">
+        <input class="aanmeldNav2" type="button" value="Aanmelden">
+        <input class="registreerNav2" type="button" value="Registreren">
 
         <!-- error -> hier komt nog php script -->
         <div class="error">
@@ -48,7 +48,7 @@
         </div>
 
         <a href="#" class="wachtwoordver">Wachtwoord vergeten?</a>   
-        <p class="geenAccount">Heb je al een account?<a href="inloggen.php" class="inloglink"> Inloggen</a></p>
+        <p class="geenAccount">Heb je al een account?<a href="inloggen.php" class="inloglink"> Aanmelden</a></p>
     </form>
 
 </div>
