@@ -1,4 +1,18 @@
-<!DOCTYPE html>
+<?php
+    if (!empty($_POST)){
+        // Waarden uit tekstvelden halen
+        $gebruikersnaam = $_POST['email'];
+        $wachtwoord = $_POST['wachtwoord'];
+
+
+        // Controleren of beide waarden correct zijn
+    }
+
+
+
+
+
+?><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
