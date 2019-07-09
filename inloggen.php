@@ -33,13 +33,18 @@
 <div class="inloggen">
     <form method="post">
         <!-- knoppen -->
-        <input class="aanmeldNav" type="button" value="Aanmelden">
-        <input class="registreerNav" type="button" value="Registreren">
+        <a href="inloggen.php"><input class="aanmeldNav" type="button" value="Aanmelden"></a>
+        <a href="registreren.php"><input class="registreerNav" type="button" value="Registreren"></a>
 
-        <!-- error -> hier komt nog php script -->
-        <div class="error">
+        <!-- error -->
+        <?php if(isset($error) ): ?>
+            <div class="error"><p>
+            <?php echo $error ?></p></div>
+        <?php endif; ?>
+        
+        <!--<div class="error">
             <p>Gelieve gegevens in te geven!</p>
-        </div>
+        </div>-->
 
         <!-- email veld -->
         <div class="formuliergroep">
