@@ -9,7 +9,7 @@ if (!empty($_POST)){
     if (empty($_POST['email'])){
         $error = "Gelieve een e-mailadres in te voeren."; 
     } else if (empty($_POST['wachtwoord'])){
-        $error = "Gelieve wachtwoorden in te geven."; 
+        $error = "Gelieve een wachtwoord(en) in te geven."; 
     } else if (empty($_POST['wachtwoord2'])){
         $error = "Herhaal je wachtwoord alstublieft."; 
     } else {

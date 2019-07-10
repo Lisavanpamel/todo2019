@@ -30,9 +30,9 @@ body{
 
 /* ////////////// inloggen ////////////// */
 .inloggen {
-    /* ander tegen de bovenste deel */
+    /* anders tegen bovenkant */
     padding-top: 190px; /* 170px */
-    
+
     background-image:url(../images/achtergrond.png);
     height: 550px; /* 430px */
     background-position: 0px 485px; /* 0px 224px */
@@ -193,7 +193,6 @@ body{
     background-color: #7056CB;
 }
 
-
 /* alle aangemaakte lijsten */
 .lijsten {
     margin-left: 40px;
@@ -201,7 +200,6 @@ body{
     height: 60px; /*35*/
     margin-bottom: 20px;
     border-radius: 30px;
-    border: none;
     background-color: #F6F9FB;
     padding-left: 20px;
     border: 2px solid #69EAC5;
@@ -245,3 +243,4 @@ body{
     float: left;
     position: absolute;
 }
+/* ////////////// einde index.php ////////////// */

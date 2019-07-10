@@ -40,9 +40,9 @@ $db->connecteren();
     </header>
 
 
-    <div class="lijsten">
+    <div class="lijsten"><a href="inloggen.php">
         <img src="images/profiel.png" alt="lijst" height="33" width="33">
-        <p class="lijst">School</p>
+        <p class="lijst">School</p></a>
         <img src="images/verwijder.png" class="verwijder" alt="lijst" height="33" width="33">
     </div>
 
