@@ -1,10 +1,9 @@
 #container {
     max-width: 410px;
+    height: 690px; /*550 px*/
     margin: 0px auto;
-    /*border: 2px solid bisque*/
 
-    /* moet nog weg na invoegin logo */
-    padding-top: 170px; /* 250px */
+    /*padding-top: 170px; /* 250px */
     margin-top: 80px;
 
     background-color: #fff;
@@ -31,9 +30,12 @@ body{
 
 /* ////////////// inloggen ////////////// */
 .inloggen {
+    /* ander tegen de bovenste deel */
+    padding-top: 190px; /* 170px */
+    
     background-image:url(../images/achtergrond.png);
     height: 550px; /* 430px */
-    background-position: 0px 344px; /* 0px 224px */
+    background-position: 0px 485px; /* 0px 224px */
     background-repeat: no-repeat;
 }
 
@@ -60,33 +62,6 @@ body{
     padding-bottom: 7px;
     color: #868686;
 }
-
-/*.inloggen form input[value="Aanmelden"]{
-    background-color: #fff;
-    border: none;
-    margin-left: 40px;
-    margin-bottom: 30px;
-    text-transform: uppercase;
-    font-size: 1.1em;
-    color: #02C7C0;
-    border-bottom: 5px solid #02C7C0;
-    padding-bottom: 7px;
-}
-
-.inloggen form input[value="Registreren"]{
-    background-color: #fff;
-    border: none;
-    margin-right: 40px;
-    margin-bottom: 30px;
-    text-transform: uppercase;
-    font-size: 1.1em;
-    float: right;
-    padding-bottom: 7px;
-    color: #868686;
-}
-*/
-
-
 
 .formulier, .knop {
     margin-left: 40px;
@@ -161,3 +136,112 @@ body{
     float: right;
 }
 /* ////////////// einde registreren ////////////// */
+
+
+
+/* ////////////// begin index.php ////////////// */
+.profiel {
+    background-image:url(../images/header.png);
+    height: 196px;
+    background-position: -30px -10px;
+    background-repeat: no-repeat;
+    padding-top: 5px; 
+}
+
+.profiel img {
+    border-radius: 30px;
+    float: left;
+    margin-left: 40px;
+    margin-top: 16px;
+    margin-right: 15px;
+}
+
+.naam {
+    font-size: 0.9em;
+    color: #fff;
+    line-height: 1.4em;
+}
+
+#uitloggen {
+    float: left;
+    font-size: 0.8em;
+    color: #4832F1;
+    text-decoration: none;
+}
+
+.profiel h1{
+    padding-top: 23px;
+    margin-left: 98px;
+    text-transform: uppercase;
+    font-size: 1.2em;
+    color: #fff;
+}
+
+.nieuweLijst {
+    margin-left: 90px;
+    width: 220px; /*320*/
+    height: 35px;
+    border-radius: 30px;
+    border: none;
+    background-color: #02C7C0;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.nieuweLijst:hover {
+    background-color: #7056CB;
+}
+
+
+/* alle aangemaakte lijsten */
+.lijsten {
+    margin-left: 40px;
+    width: 300px;
+    height: 60px; /*35*/
+    margin-bottom: 20px;
+    border-radius: 30px;
+    border: none;
+    background-color: #F6F9FB;
+    padding-left: 20px;
+    border: 2px solid #69EAC5;
+}
+
+.lijsten img {
+    border-radius: 30px;
+    float: left;
+    margin-top: 12px;
+    margin-right: 15px;
+    border: 2px solid #69EAC5;
+}
+
+/* vulbakje: verwijderen */
+.lijsten .verwijder {
+    border-radius: none;
+    float: right;
+    margin-top: -35px;
+    margin-right: 20px;
+    border: none;
+}
+
+/* titels van lijsten */
+.lijst {
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #4832F1;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* button naar beneden verplaatsen */
+.nieuweLijst {
+    margin-top: 30px;
+}
+
+/* plusje in button */
+.knopLijst img {
+    padding-left: 128px;
+    padding-top: 40px;
+    float: left;
+    position: absolute;
+}

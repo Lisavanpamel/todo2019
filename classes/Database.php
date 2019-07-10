@@ -19,7 +19,7 @@ class Database {
                 $instellingen['gebruikersnaam'], 
                 $instellingen['paswoord']
             );
-            echo "connectie ok"; 
+//            echo "connectie ok"; 
             return self::$connectie;
         // Anders geven we huidige connectie terug
         } else {

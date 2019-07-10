@@ -25,6 +25,50 @@ $db->connecteren();
 
 </head>
 <body>
-    
+
+<section id="container">
+    <!-- profiel -->
+    <header>
+        <div class="profiel">
+            <img src="images/profiel.png" alt="profielfoto" height="42" width="42">
+            <p class="naam">Lisa Van Pamel<br><a href="inloggen.php" id="uitloggen">Uitloggen</a></p>
+
+            <!-- titel -->
+            <h1>Mijn lijsten</h1>
+        
+        </div>
+    </header>
+
+
+    <div class="lijsten">
+        <img src="images/profiel.png" alt="lijst" height="33" width="33">
+        <p class="lijst">School</p>
+        <img src="images/verwijder.png" class="verwijder" alt="lijst" height="33" width="33">
+    </div>
+
+    <div class="lijsten">
+        <img src="images/profiel.png" alt="lijst" height="33" width="33">
+        <p class="lijst">Vakantie</p>
+        <img src="images/verwijder.png" class="verwijder" alt="lijst" height="33" width="33">
+    </div>
+
+    <div class="lijsten">
+        <img src="images/profiel.png" alt="lijst" height="33" width="33">
+        <p class="lijst">Familie</p>
+        <img src="images/verwijder.png" class="verwijder" alt="lijst" height="33" width="33">
+    </div>
+
+    <div class="lijsten">
+        <img src="images/profiel.png" alt="lijst" height="33" width="33">
+        <p class="lijst">Persoonlijk</p>
+        <img src="images/verwijder.png" class="verwijder" alt="lijst" height="33" width="33">
+    </div>
+
+    <!-- nieuwe lijst toevoegen -->
+    <div class="knopLijst">
+        <img src="images/nieuw.png" alt="foto" height="14" width="14">
+        <input class="nieuweLijst" type="submit" value="Nieuwe lijst"> 
+    </div>
+</section>
 </body>
 </html>
