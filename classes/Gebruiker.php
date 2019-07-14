@@ -93,9 +93,21 @@ class Gebruiker extends Database {
                 return $this;
         }
 
-// gebruikersnaam
+// gebruikersID
         public function getGebruikersId()
         {
+                /* hier moet ik de gebruikersID uit de tabel Gebruikers halen:
+                1. conncetie met database, selecteer id van de tabel Gebruiker waar de gebruikersnaam gelijk is aaan de variable gebruikersnaam
+
+                2. bind de parameters (':gebruikersnaam', $this->getGebruikersnaam)
+
+                3. vooer query uit
+
+                4. sla resultaat op in variable resultaat
+
+                5. return van variable resultaat het id ($resultaat['id'])
+                */
+
                 return $this->gebruikersId;
         }
 
@@ -157,7 +169,7 @@ class Gebruiker extends Database {
         }
 
         function sterkWachtwoord(){
-            if (strlen($this->wachtwoord) >= 8) {
+            if (strlen($this->wachtwoord) > 8) {
                 return true; 
             } else {
                 throw new Exception("Uw wachtwoord moet langer zijn dan 8 tekens.");
@@ -182,9 +194,13 @@ class Gebruiker extends Database {
             $query->execute();
 
             while ($result = $query->fetch(PDO::FETCH_ASSOC)) {
+                // nakijken f email al in gebruik is
                 if ($email == $result['email']){
                     throw new Exception("E-mail bestaat al, kies een andere.");
                 }
+
+                // nakijken of gebruikersnaam al in gebruik is
+                // to do ...
             }
         }
     }
