@@ -1,6 +1,9 @@
 <?php
 
-    class Gebruiker extends Database {
+// bestanden toevoegen
+include_once("classes/Database.php");
+
+class Gebruiker extends Database {
         // variabelen: registreren
         private $email;
         private $wachtwoord;
