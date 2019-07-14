@@ -203,6 +203,21 @@ class Gebruiker extends Database {
                 // to do ...
             }
         }
+
+        // functie word gebruikt bij het inloggen
+        function zoekGebruikersIdViaEmail() {
+                $query = $this->connecteren()->prepare("SELECT id FROM gebruiker WHERE email = :email");
+                $query->bindParam(':email', $this->email);
+                $query->execute();
+                $result = $query->fetch(PDO::FETCH_ASSOC);
+                return $result['id'];
+        }
+
+
+        function aanmelden() {
+                session_start();
+                $_SESSION['gebruiker'] = $this->gebruikersId;
+        }
     }
 
 

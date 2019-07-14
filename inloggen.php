@@ -29,6 +29,20 @@ include_once("classes/Gebruiker.php");
             // functies uitvoeren om aan te melden
             // te doen
 
+
+            // zoek gebruikersId via het gekregen email adres
+            $gebruikerId = $gebruiker->zoekGebruikersIdViaEmail();
+
+            // voeg het gekregen gebruikersid toe bij $gebruiker (de instantie van de klasse)
+            $gebruiker->setGebruikersId($gebruikerId);
+
+            // aanmelden
+            $gebruiker->aanmelden();
+
+            // naar de homepage
+            echo "je ben aangemeld!";
+            header("Location: index.php");
+
         } catch (Exception $e) {
             // variable foutmelding
             $foutmelding = $e->getMessage();
