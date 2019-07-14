@@ -1,11 +1,38 @@
 <?php
+// bestand(en) toevoegen 
+include_once("classes/Gebruiker.php"); 
+
     if (!empty($_POST)){
         // Waarden uit tekstvelden halen
         $email = $_POST['email'];
         $wachtwoord = $_POST['wachtwoord'];
 
+        // nieuwe instantie klasse gebruiker maken
+        $gebruiker = new Gebruiker();
 
-        // Controleren of beide waarden correct zijn
+        // mail toevoegen aan $gebruiker
+        $gebruiker->setEmail($email);
+
+        //wachtwoord toevoegen aan $gebruiker
+        $gebruiker->setWachtwoord($wachtwoord);
+
+        //wachtwoord2 toevoegen aan $gebruiker
+        $gebruiker->setWachtwoord2($wachtwoord2);
+
+
+        // controleren of beide waarden correct zijn
+        // via try catch (try = proberen, catch = opvangen, exeption = fouten/uitzonderingen)
+        try {
+            // functies uitvoeren om te kijken of gegevens van de $gebruiker correct zijn
+            // te doen
+
+            // functies uitvoeren om aan te melden
+            // te doen
+
+        } catch (Exception $e) {
+            // variable foutmelding
+            $foutmelding = $e->getMessage();
+            }
     }
 
 
