@@ -24,7 +24,8 @@ include_once("classes/Gebruiker.php");
         // via try catch (try = proberen, catch = opvangen, exeption = fouten/uitzonderingen)
         try {
             // functies uitvoeren om te kijken of gegevens van de $gebruiker correct zijn
-            // te doen
+            $gebruiker->controleerAanmelden();
+            
 
             // functies uitvoeren om aan te melden
             // te doen
@@ -78,9 +79,9 @@ include_once("classes/Gebruiker.php");
         <a href="registreren.php"><input class="registreerNav" type="button" value="Registreren"></a>
 
         <!-- error -->
-        <?php if(isset($error) ): ?>
+        <?php if(isset($foutmelding) ): ?>
             <div class="error"><p>
-            <?php echo $error ?></p></div>
+            <?php echo $foutmelding ?></p></div>
         <?php endif; ?>
         
         <!--<div class="error">

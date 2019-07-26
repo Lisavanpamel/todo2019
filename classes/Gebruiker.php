@@ -163,6 +163,32 @@ class Gebruiker extends Database {
         }
 
 /* ////////////////// functies ////////////////// */
+        function aanmelden() {
+            // sessie starten
+            session_start();
+            // gebruikersnaam opslaan
+            $_SESSION['gebruikernaam'] = $this->gebruikersnaam;
+        }
+
+        function controleerAanmelden(){
+            $query = $this->connecteren()->prepare("SELECT * FROM gebruiker WHERE email = :email"); 
+            $query->bindParam(':email', $this->mail);
+            $query->execute(); 
+            $resultaat = $query->fetch(PDO::FETCH_ASSOC);
+                
+            // email controleren
+            if ($resultaat['email'] != $this->mail) {
+                throw new Exception("Email is onbekend, probeer het opnieuw.");            
+            } else {
+                // password controleren
+                if (password_verify($this->wachtwoord, $resultaat['wachtwoord'])){
+                } else {
+                    throw new Exception("Wachtwoord is fout, probeer het opnieuw.");
+                }
+            }
+        }
+
+
         function controleerWachtwoord(){
             if ($this->wachtwoord == $this->wachtwoord2) {
                 return true; 
@@ -217,10 +243,9 @@ class Gebruiker extends Database {
         }
 
 
-        function aanmelden() {
-                session_start();
-                $_SESSION['gebruiker'] = $this->gebruikersId;
-        }
+        
+
+
     }
 
 
