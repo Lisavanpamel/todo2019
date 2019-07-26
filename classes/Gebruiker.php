@@ -94,21 +94,24 @@ class Gebruiker extends Database {
         }
 
 // gebruikersID
+        // gegevens uit database halen ivp zelf door te geven
         public function getGebruikersId()
         {
-                /* hier moet ik de gebruikersID uit de tabel Gebruikers halen:
-                1. conncetie met database, selecteer id van de tabel Gebruiker waar de gebruikersnaam gelijk is aaan de variable gebruikersnaam
+                // hier moet ik de gebruikersID uit de tabel Gebruikers halen:
+                // 1. conncetie met database, selecteer id van de tabel Gebruiker waar de gebruikersnaam gelijk is aaan de variable gebruikersnaam
+                $query = $this->connecteren()->prepare("SELECT id FROM gebruiker WHERE gebruikersnaam = :gebruikersnaam");
 
-                2. bind de parameters (':gebruikersnaam', $this->getGebruikersnaam)
+                // 2. bind de parameters
+                $query->bindParam(':gebruikersnaam', $this->getGebruikersnaam);
 
-                3. vooer query uit
+                // 3. voer query uit
+                $query->execute();
 
-                4. sla resultaat op in variable resultaat
+                // 4. sla resultaat op in variable resultaat
+                $resultaat = $query->fetch(PDO::FETCH_ASSOC);
 
-                5. return van variable resultaat het id ($resultaat['id'])
-                */
-
-                return $this->gebruikersId;
+                // 5. return van variable resultaat het id
+                return $resultaat['id'];
         }
 
         public function setGebruikersId($gebruikersId)
@@ -196,11 +199,11 @@ class Gebruiker extends Database {
             while ($result = $query->fetch(PDO::FETCH_ASSOC)) {
                 // nakijken f email al in gebruik is
                 if ($email == $result['email']){
-                    throw new Exception("E-mail bestaat al, kies een andere.");
+                        throw new Exception("E-mail bestaat al, kies een andere.");
+                } // nakijken of gebruikersnaam al in gebruik is
+                else if ($wachtwoord == $result['wachtwoord']) { 
+                        throw new Exception("wachtwoord bestaat al, kies een andere.");   
                 }
-
-                // nakijken of gebruikersnaam al in gebruik is
-                // to do ...
             }
         }
 
