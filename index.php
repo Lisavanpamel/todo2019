@@ -5,7 +5,26 @@ include_once("classes/Gebruiker.php");
 
 // connectie met db testen
 $db = new Database(); 
-$db->connecteren(); 
+$db->connecteren();
+
+// Homepagina alleen laten tonen wanneer gebruiker aangemeld is
+// werken met sessions
+// sessie starten met session_start()
+session_start();
+
+// we controleren of deze sessie de juiste sessie is
+// bij het inloggen noemen we onze session $_SESSION['gebruiker] en geven we de gebruiker id mee;
+if (isset($_SESSION['gebruiker'])){
+    // nieuwe instantie maken van de klasse Gebruiker
+    // aan deze instantie gaan we de gebruikers id toevoegen
+    $gebruiker = new Gebruiker();
+    $gebruiker->setGebruikersId($_SESSION['gebruiker']);
+
+} else {
+    // er is nog geen sessie opgestart, de gebruiker moet zich nog inloggen en mag deze pagina niet zien
+    // we veranderen van locatie en gaan naar de pagina inloggen.php
+    header('Location: inloggen.php');
+}
 ?>
 
 
