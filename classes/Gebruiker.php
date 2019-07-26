@@ -189,7 +189,7 @@ class Gebruiker extends Database {
         }
 
 
-        function controleerWachtwoord(){
+        function controleerTweeWachtwoorden(){
             if ($this->wachtwoord == $this->wachtwoord2) {
                 return true; 
             } else {
@@ -206,13 +206,15 @@ class Gebruiker extends Database {
         }
 
         function registreren(){
-            $query = $this->connecteren()->prepare("INSERT INTO gebruiker(email, wachtwoord) VALUES (:email, :wachtwoord)");
+            $query = $this->connecteren()->prepare("INSERT INTO gebruiker(naam, email, wachtwoord) VALUES (:naam, :email, :wachtwoord)");
+            $query->bindParam(':naam', $this->gebruikersnaam);
             $query->bindParam(':email', $this->email);
             $query->bindParam(':wachtwoord', $this->hash);
             $query->execute();
         }
  
         function hashWachtwoord(){
+            // uitleggen hoe dit werkt
             $this->hash = password_hash($this->wachtwoord, PASSWORD_DEFAULT); 
             return $this->hash;
         }
@@ -222,23 +224,24 @@ class Gebruiker extends Database {
             $query->bindParam(':email', $email);
             $query->execute();
 
-            while ($result = $query->fetch(PDO::FETCH_ASSOC)) {
-                // nakijken f email al in gebruik is
+            while ($resultaat = $query->fetch(PDO::FETCH_ASSOC)) {
+                // nakijken of email al in gebruik is
                 if ($email == $result['email']){
                         throw new Exception("E-mail bestaat al, kies een andere.");
-                } // nakijken of gebruikersnaam al in gebruik is
+                } // nakijken of wachtwoord al in gebruik is
                 else if ($wachtwoord == $result['wachtwoord']) { 
                         throw new Exception("wachtwoord bestaat al, kies een andere.");   
                 }
             }
         }
 
-        // functie word gebruikt bij het inloggen
+        // deze functie gebruiken we bij het inloggen.php
         function zoekGebruikersIdViaEmail() {
                 $query = $this->connecteren()->prepare("SELECT id FROM gebruiker WHERE email = :email");
                 $query->bindParam(':email', $this->email);
                 $query->execute();
                 $result = $query->fetch(PDO::FETCH_ASSOC);
+                echo'--- result '. $result['id'];
                 return $result['id'];
         }
 
