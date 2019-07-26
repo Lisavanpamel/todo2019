@@ -7,23 +7,23 @@ include_once("classes/Gebruiker.php");
 if (!empty($_POST)){
     // foute ingeving gegevens
     if (empty($_POST['email'])){
-        $error = "Gelieve een e-mailadres in te voeren."; 
+        $foutmelding = "Gelieve een e-mailadres in te voeren."; 
     } else if (empty($_POST['wachtwoord'])){
-        $error = "Gelieve een wachtwoord(en) in te geven."; 
+        $foutmelding = "Gelieve een wachtwoord(en) in te geven."; 
     } else if (empty($_POST['wachtwoord2'])){
-        $error = "Herhaal je wachtwoord alstublieft."; 
+        $foutmelding = "Herhaal je wachtwoord alstublieft."; 
     } else {
         // waarden toevoegen aan variabelen
-        $mail = $_POST['email'];
+        $email = $_POST['email'];
         $wachtwoord = $_POST['wachtwoord'];
         $wachtwoord2 = $_POST['wachtwoord2'];
         
-        $beheerderValue = 0;
+        $beheerderWaarde = 0;
         
             try {
                 // Nieuwe gebruiker maken 
                 $gebruiker = new Gebruiker;
-                $gebruiker->setBeheerder($beheerderValue); 
+                $gebruiker->setBeheerder($beheerderWaarde); 
                 $gebruiker->setBeheerderId(0); 
     
                 // wijs waarden toe aan de gebruiker
@@ -35,28 +35,28 @@ if (!empty($_POST)){
                     // Sterk wachwoord -> meer dan 8 tekens
                     $gebruiker->sterkWachtwoord(); 
     
-                    // controleer wachtwoorden
-                    $user->controleerWachtwoord();
+                    // controleer of de 2 wachtwoorden gelijk zijn
+                    $gebruiker->controleerTweeWachtwoorden();
     
-                    // check register
-                    $user->checkRegistreren();
+                    // controleer registreren
+                    $gebruiker->checkRegistreren();
     
                     // hash password
-                    $hashed = $user->hashWachtwoord();
-                    $user->setHash($hashed);
+                    $hashed = $gebruiker->hashWachtwoord();
+                    $gebruiker->setHash($hashed);
                                 
                     // registreren
-                    $user->registreren();
+                    $gebruiker->registreren();
                     header('Location: inloggen.php'); 
     
                 } catch (Exception $e){
-                    // error
-                    $error = $e->getMessage();
+                    // variable foutmelding
+                    $foutmelding = $e->getMessage();
                 }
     
             } catch (Exception $e){
-                // error
-                $error = $e->getMessage();        
+                // variable foutmelding
+                $foutmelding = $e->getMessage();        
             }
         }    
     
@@ -108,9 +108,9 @@ if (!empty($_POST)){
         <a href="registreren.php"><input class="registreerNav2" type="button" value="Registreren"></a>
 
         <!-- error -->
-        <?php if(isset($error) ): ?>
+        <?php if(isset($foutmelding) ): ?>
             <div class="error"><p>
-            <?php echo $error ?></p></div>
+            <?php echo $foutmelding ?></p></div>
         <?php endif; ?>
         
         <!--<div class="error">
