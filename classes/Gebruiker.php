@@ -246,9 +246,6 @@ class Gebruiker extends Database {
         }
 
 
-        
-
-
     }
 
 

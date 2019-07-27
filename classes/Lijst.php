@@ -13,7 +13,6 @@ class Lijst extends Database {
     
 
 
-
 // lijst
         public function getLijstId()
         {
@@ -43,6 +42,7 @@ class Lijst extends Database {
 
 /* ////////////////// functies ////////////////// */
         
+  
         
 }
 
