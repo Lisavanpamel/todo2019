@@ -49,7 +49,7 @@ if (isset($_SESSION['gebruiker'])){
     <header>
         <div class="profiel">
             <img src="images/profiel.png" alt="profielfoto" height="42" width="42">
-            <p class="naam">Lisa Van Pamel<br><a href="inloggen.php" id="uitloggen">Uitloggen</a></p>
+            <p class="naam">Lisa Van Pamel<br><a href="uitloggen.php" id="uitloggen">Uitloggen</a></p>
 
             <!-- titel -->
             <h1>Mijn lijsten</h1>
@@ -82,10 +82,11 @@ if (isset($_SESSION['gebruiker'])){
         <img src="images/verwijder.png" class="verwijder" alt="lijst" height="33" width="33">
     </div>
 
-    <!-- nieuwe lijst toevoegen -->
+    <!-- BUTTON: nieuwe lijst toevoegen -->
     <div class="knopLijst">
-        <img src="images/nieuw.png" alt="foto" height="14" width="14">
-        <input class="nieuweLijst" type="submit" value="Nieuwe lijst">
+        <a href="nieuweLijst.php">Nieuwe lijst</a>
+        <!--<img src="images/nieuw.png" alt="foto" height="14" width="14">
+        <input class="nieuweLijst" type="submit" value="Nieuwe lijst">-->
     </div>
 </section>
 </body>

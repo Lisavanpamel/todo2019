@@ -1,19 +1,28 @@
 <?php
-
 // bestanden toevoegen
-include_once("classes/Database.php");
+//include_once("classes/Database.php");
 
 class Lijst extends Database {
         // variabelen
-        private $lijstId;
         private $titel;
-        private $taken;
-        private $mensen;
-        private $beheerderId;
-    
+        private $lijstId;
+        private $gebruikersId;
 
 
-// lijst
+// titel
+        public function getTitel()
+        {
+                return $this->titel;
+        }
+
+        public function setTitel($titel)
+        {
+                $this->titel = $titel;
+
+                return $this;
+        }
+
+// lijstId 
         public function getLijstId()
         {
                 return $this->lijstId;
@@ -26,24 +35,27 @@ class Lijst extends Database {
                 return $this;
         }
 
-// titel   
-        public function getTitel()
+// gebruikersId
+        public function getGebruikersId()
         {
-            return $this->titel;
+                return $this->gebruikersId;
         }
 
-        public function setTitel($titel)
+        public function setGebruikersId($gebruikersId)
         {
-            $this->titel = $titel;
+                $this->gebruikersId = $gebruikersId;
 
-            return $this;
+                return $this;
         }
 
 
 /* ////////////////// functies ////////////////// */
-        
-  
-        
+        public function toevoegenAanDatabase(){
+                $titel = $this->getTitel();
+                $gebruikersId = $this->getGebruikersId();
+
+                        
+        }
 }
 
 

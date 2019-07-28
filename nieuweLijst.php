@@ -8,7 +8,7 @@ include_once("classes/Gebruiker.php");
 // Sessie starten
 session_start();
 
-    if (isset($_POST['knopLijst'])){
+    if (isset($_POST['KnopLijst'])){
 	    // controleer of empty niet leeg is
 	    if (empty($_POST['lijstNaam'])){
             // anders foutmelding
@@ -23,7 +23,19 @@ session_start();
         // nieuwe gebruiker toevoegen
 		$gebruiker = new Gebruiker();
 		
-        // Do To
+        // gebruikersId opvragen uit session
+        $gebruikersId = $_SESSION['gebruiker'];
+        $lijst->setGebruikersId($gebruikersId);
+        
+        try {
+            $lijst->toevoegenAanDatabase();
+            $lijstId = $lijst->getLijstIdVanDatabase();
+            $lijst->setLijstId($lijstId);
+            $lijst->toevoegenAanTabelLijstGebruiker();
+            //header("Location: index.php");
+        } catch (Exception $e) {
+            $foutmelding = $e->getMessage();
+        }
 		}
 	}
 
@@ -32,20 +44,28 @@ session_start();
 include_once ("header.php");
 ?>
 
-<section id="container"> 
+<section id="container">
     <!-- (nieuwe) lijst toevoegen -->
-    <div class="knopLijst">
+    <form method="post">
+        <!-- foutmelding -->
+        <?php if(isset($foutmelding) ): ?>
+            <div class="error"><p>
+            <?php echo $foutmelding ?></p></div>
+        <?php endif; ?>
+
+        <!-- naam veld -->
         <div class="formuliergroep">
-            <input class="formulier" type="text" name="lijstNaam" placeholder="Email">
+            <input class="formulier" type="text" name="lijstNaam" placeholder="Naam">
         </div>
 
-        <img src="images/nieuw.png" alt="foto" height="14" width="14">
-        <input class="nieuweLijst" name="knopLijst" type="submit" value="Nieuwe lijst">
-    </div>
+        <!-- knop bevestigen -->
+        <div class="formuliergroep">
+            <input class="NieuweLijst" type="submit" value="Nieuwe Lijst" name="KnopLijst">
+        </div>
+    </form>
 </section>
     
 <?php
 // footer
 include_once("footer.php");
 ?>
-</html>
