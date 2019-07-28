@@ -166,18 +166,20 @@ class Gebruiker extends Database {
         function aanmelden() {
             // sessie starten
             session_start();
-            // gebruikersnaam opslaan
-            $_SESSION['gebruikernaam'] = $this->gebruikersnaam;
+            // gebruikers id opslaan
+            $_SESSION['gebruiker'] = $this->gebruikersId;
+            echo "session: " . $_SESSION['gebruiker'];
         }
 
         function controleerAanmelden(){
+                echo $this->wachtwoord;
             $query = $this->connecteren()->prepare("SELECT * FROM gebruiker WHERE email = :email"); 
-            $query->bindParam(':email', $this->mail);
+            $query->bindParam(':email', $this->email);
             $query->execute(); 
             $resultaat = $query->fetch(PDO::FETCH_ASSOC);
                 
             // email controleren
-            if ($resultaat['email'] != $this->mail) {
+            if ($resultaat['email'] != $this->email) {
                 throw new Exception("Email is onbekend, probeer het opnieuw.");            
             } else {
                 // password controleren
