@@ -23,7 +23,7 @@ if (isset($_SESSION['gebruiker'])){
 } else {
     // er is nog geen sessie opgestart, de gebruiker moet zich nog inloggen en mag deze pagina niet zien
     // we veranderen van locatie en gaan naar de pagina inloggen.php
-    header('Location: inloggen.php');
+    //header('Location: inloggen.php');
 }
 
 
