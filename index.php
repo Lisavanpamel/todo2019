@@ -46,6 +46,7 @@ if (isset($_SESSION['gebruiker'])){
 <body>
 
     <!-- lijsten uit database halen -->
+    <!-- Hiermee lijsten laten tonen op index.php -->
     <?php
         $lijst = new Lijst();
         $lijst->setGebruikersId($_SESSION['gebruiker']);
