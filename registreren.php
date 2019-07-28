@@ -120,7 +120,7 @@ if (!empty($_POST)){
 
         <!-- gebruikersnaam veld -->
         <div class="formuliergroep">
-            <input class="formulier" type="text" name="naam" placeholder="Naam">
+            <input class="formulier" type="text" name="gebruikersnaam" placeholder="Naam">
         </div>
 
         <!-- email veld -->
