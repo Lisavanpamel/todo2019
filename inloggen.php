@@ -18,7 +18,8 @@ include_once("classes/Gebruiker.php");
         $gebruiker->setWachtwoord($wachtwoord);
 
         //wachtwoord2 toevoegen aan $gebruiker
-        $gebruiker->setWachtwoord2($wachtwoord2);
+        // is niet nodig bij het inloggen
+        //$gebruiker->setWachtwoord2($wachtwoord2);
 
 
         // controleren of beide waarden correct zijn

@@ -117,6 +117,12 @@ if (!empty($_POST)){
             <p>Gelieve gegevens in te geven!</p>
         </div>-->
 
+
+        <!-- gebruikersnaam veld -->
+        <div class="formuliergroep">
+            <input class="formulier" type="text" name="naam" placeholder="Naam">
+        </div>
+
         <!-- email veld -->
         <div class="formuliergroep">
             <input class="formulier" type="text" name="email" placeholder="Email">
