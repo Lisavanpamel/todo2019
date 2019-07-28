@@ -226,10 +226,10 @@ class Gebruiker extends Database {
 
             while ($resultaat = $query->fetch(PDO::FETCH_ASSOC)) {
                 // nakijken of email al in gebruik is
-                if ($email == $result['email']){
+                if ($email == $resultaat['email']){
                         throw new Exception("E-mail bestaat al, kies een andere.");
                 } // nakijken of wachtwoord al in gebruik is
-                else if ($wachtwoord == $result['wachtwoord']) { 
+                else if ($wachtwoord == $resultaat['wachtwoord']) { 
                         throw new Exception("wachtwoord bestaat al, kies een andere.");   
                 }
             }
