@@ -1,7 +1,8 @@
 <?php
 // bestanden toevoegen 
 include_once("classes/Database.php");
-include_once("classes/Gebruiker.php"); 
+include_once("classes/Gebruiker.php");
+include_once("classes/Lijst.php");
 
 // connectie met db testen
 $db = new Database(); 
@@ -43,6 +44,14 @@ if (isset($_SESSION['gebruiker'])){
 
 </head>
 <body>
+
+    <!-- lijsten uit database halen -->
+    <?php
+        $lijst = new Lijst();
+        $lijst->setGebruikersId($_SESSION['gebruiker']);
+        $lijst->toonLijsten();
+    ?>
+
 
 <section id="container"> 
     <!-- profiel -->

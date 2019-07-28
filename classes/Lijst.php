@@ -85,6 +85,8 @@ class Lijst extends Database {
         }
 
         
+        // hebben we nodig in index.php
+        
 }
 
 
