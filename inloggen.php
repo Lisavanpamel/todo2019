@@ -1,5 +1,6 @@
 <?php
-// bestand(en) toevoegen 
+// bestanden toevoegen
+include_once("classes/Database.php");
 include_once("classes/Gebruiker.php"); 
 
     if (!empty($_POST)){
@@ -45,13 +46,10 @@ include_once("classes/Gebruiker.php");
             header("Location: index.php");
 
         } catch (Exception $e) {
-            // variable foutmelding
+            // toon foutmelding
             $foutmelding = $e->getMessage();
             }
     }
-
-
-
 
 
 ?><!DOCTYPE html>

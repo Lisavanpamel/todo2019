@@ -9,7 +9,7 @@ if (!empty($_POST)){
     if (empty($_POST['email'])){
         $foutmelding = "Gelieve een e-mailadres in te voeren."; 
     } else if (empty($_POST['wachtwoord'])){
-        $foutmelding = "Gelieve een wachtwoord(en) in te geven."; 
+        $foutmelding = "Gelieve een wachtwoord in te geven."; 
     } else if (empty($_POST['wachtwoord2'])){
         $foutmelding = "Herhaal je wachtwoord alstublieft."; 
     } else {
@@ -50,12 +50,12 @@ if (!empty($_POST)){
                     header('Location: inloggen.php'); 
     
                 } catch (Exception $e){
-                    // variable foutmelding
+                    // toon foutmelding
                     $foutmelding = $e->getMessage();
                 }
     
             } catch (Exception $e){
-                // variable foutmelding
+                // toon foutmelding
                 $foutmelding = $e->getMessage();        
             }
         }    
@@ -107,7 +107,7 @@ if (!empty($_POST)){
         <a href="inloggen.php"><input class="aanmeldNav2" type="button" value="Aanmelden"></a>
         <a href="registreren.php"><input class="registreerNav2" type="button" value="Registreren"></a>
 
-        <!-- error -->
+        <!-- foutmelding -->
         <?php if(isset($foutmelding) ): ?>
             <div class="error"><p>
             <?php echo $foutmelding ?></p></div>

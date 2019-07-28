@@ -25,10 +25,9 @@ if (isset($_SESSION['gebruiker'])){
     // we veranderen van locatie en gaan naar de pagina inloggen.php
     header('Location: inloggen.php');
 }
-?>
 
 
-<!DOCTYPE html>
+?><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -45,7 +44,7 @@ if (isset($_SESSION['gebruiker'])){
 </head>
 <body>
 
-<section id="container">
+<section id="container"> 
     <!-- profiel -->
     <header>
         <div class="profiel">
@@ -58,7 +57,7 @@ if (isset($_SESSION['gebruiker'])){
         </div>
     </header>
 
-
+    <!-- lijsten -->
     <div class="lijsten"><a href="inloggen.php">
         <img src="images/profiel.png" alt="lijst" height="33" width="33">
         <p class="lijst">School</p></a>
@@ -86,7 +85,7 @@ if (isset($_SESSION['gebruiker'])){
     <!-- nieuwe lijst toevoegen -->
     <div class="knopLijst">
         <img src="images/nieuw.png" alt="foto" height="14" width="14">
-        <input class="nieuweLijst" type="submit" value="Nieuwe lijst"> 
+        <input class="nieuweLijst" type="submit" value="Nieuwe lijst">
     </div>
 </section>
 </body>
