@@ -6,14 +6,18 @@ include_once("classes/Gebruiker.php");
 
 if (!empty($_POST)){
     // foute ingeving gegevens
-    if (empty($_POST['email'])){
-        $foutmelding = "Gelieve een e-mailadres in te voeren."; 
+    if (empty($_POST['gebruikersnaam'])){
+        $foutmelding = "Gelieve een naam in te voeren."; 
+    } else if (empty($_POST['wachtwoord'])){
+    } if (empty($_POST['email'])){
+        $foutmelding = "Gelieve een e-mailadres in te voeren.";
     } else if (empty($_POST['wachtwoord'])){
         $foutmelding = "Gelieve een wachtwoord in te geven."; 
     } else if (empty($_POST['wachtwoord2'])){
         $foutmelding = "Herhaal je wachtwoord alstublieft."; 
     } else {
         // waarden toevoegen aan variabelen
+        $gebruikersnaam = $_POST['gebruikersnaam'];
         $email = $_POST['email'];
         $wachtwoord = $_POST['wachtwoord'];
         $wachtwoord2 = $_POST['wachtwoord2'];
@@ -27,6 +31,7 @@ if (!empty($_POST)){
                 $gebruiker->setBeheerderId(0); 
     
                 // wijs waarden toe aan de gebruiker
+                $gebruiker->setGebruikersnaam($gebruikersnaam);
                 $gebruiker->setEmail($email); 
                 $gebruiker->setWachtwoord($wachtwoord);
                 $gebruiker->setWachtwoord2($wachtwoord2);
@@ -61,6 +66,8 @@ if (!empty($_POST)){
         }    
     
 }
+
+
 
 
 
