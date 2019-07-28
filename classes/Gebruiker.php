@@ -228,9 +228,9 @@ class Gebruiker extends Database {
                 // nakijken of email al in gebruik is
                 if ($email == $resultaat['email']){
                         throw new Exception("E-mail bestaat al, kies een andere.");
-                } // nakijken of wachtwoord al in gebruik is
-                else if ($wachtwoord == $resultaat['wachtwoord']) { 
-                        throw new Exception("wachtwoord bestaat al, kies een andere.");   
+                } // nakijken of gebruikersnaam al in gebruik is
+                else if ($gebruikersnaam == $resultaat['gebruikersnaam']) { 
+                        throw new Exception("gebruikersnaam bestaat al, kies een andere.");   
                 }
             }
         }
