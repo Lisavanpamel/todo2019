@@ -44,7 +44,7 @@ session_start();
 include_once ("header.php");
 ?>
 
-<section id="container">
+<section id="afmeting">
     <!-- (nieuwe) lijst toevoegen -->
     <form method="post">
         <!-- foutmelding -->
@@ -60,7 +60,7 @@ include_once ("header.php");
 
         <!-- knop bevestigen -->
         <div class="formuliergroep">
-            <input class="NieuweLijst" type="submit" value="Nieuwe Lijst" name="KnopLijst">
+            <input class="nieuweLijst" type="submit" value="Nieuwe Lijst" name="KnopLijst">
         </div>
     </form>
 </section>

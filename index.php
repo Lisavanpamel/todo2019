@@ -28,69 +28,22 @@ if (isset($_SESSION['gebruiker'])){
 }
 
 
-?><!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>ToDo</title>
-    
-    <!-- css style -->
-    <link rel="stylesheet" href="css/style.css">
-
-    <!-- lettertypes -->
-    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
-
-</head>
-<body>
-
+// header toevoegen
+include_once ("header.php");
+?>
     <!-- lijsten uit database halen -->
     <!-- Hiermee lijsten laten tonen op index.php -->
+<section id="afmeting"> 
+    
+    <div class="l">
+        <h1>Mijn lijsten</h1>
+    </div>
+
     <?php
         $lijst = new Lijst();
         $lijst->setGebruikersId($_SESSION['gebruiker']);
         $lijst->toonLijsten();
     ?>
-
-
-<section id="container"> 
-    <!-- profiel -->
-    <header>
-        <div class="profiel">
-            <img src="images/profiel.png" alt="profielfoto" height="42" width="42">
-            <p class="naam">Lisa Van Pamel<br><a href="uitloggen.php" id="uitloggen">Uitloggen</a></p>
-
-            <!-- titel -->
-            <h1>Mijn lijsten</h1>
-        
-        </div>
-    </header>
-
-    <!-- lijsten -->
-    <div class="lijsten"><a href="inloggen.php">
-        <img src="images/profiel.png" alt="lijst" height="33" width="33">
-        <p class="lijst">School</p></a>
-        <img src="images/verwijder.png" class="verwijder" alt="lijst" height="33" width="33">
-    </div>
-
-    <div class="lijsten">
-        <img src="images/profiel.png" alt="lijst" height="33" width="33">
-        <p class="lijst">Vakantie</p>
-        <img src="images/verwijder.png" class="verwijder" alt="lijst" height="33" width="33">
-    </div>
-
-    <div class="lijsten">
-        <img src="images/profiel.png" alt="lijst" height="33" width="33">
-        <p class="lijst">Familie</p>
-        <img src="images/verwijder.png" class="verwijder" alt="lijst" height="33" width="33">
-    </div>
-
-    <div class="lijsten">
-        <img src="images/profiel.png" alt="lijst" height="33" width="33">
-        <p class="lijst">Persoonlijk</p>
-        <img src="images/verwijder.png" class="verwijder" alt="lijst" height="33" width="33">
-    </div>
 
     <!-- BUTTON: nieuwe lijst toevoegen -->
     <div class="knopLijst">
@@ -99,5 +52,3 @@ if (isset($_SESSION['gebruiker'])){
         <input class="nieuweLijst" type="submit" value="Nieuwe lijst">-->
     </div>
 </section>
-</body>
-</html>

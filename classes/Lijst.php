@@ -95,7 +95,7 @@ class Lijst extends Database {
                 if($query->rowCount() == 0){
                         echo '<p class="empty">Je hebt nog geen lijsten aangemaakt.</p>';
                 } else {
-                        // toon alle lijsten
+                        // toon alle lijsten op index.php
                         while ($resultaat = $query->fetch(PDO::FETCH_ASSOC)) {
                                 echo
                                 '<div class="lijsten"><a href="nieuweTaak.php">
@@ -107,6 +107,3 @@ class Lijst extends Database {
                 }
         }
 }
-
-
-?>

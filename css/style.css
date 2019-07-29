@@ -1,3 +1,20 @@
+/* ////////////// header ////////////// */
+header {
+    padding-top: 80px;
+    max-width: 410px;
+    margin: 0px auto; 
+}
+/* ////////////// einde header ////////////// */
+
+/* ////////////// container voor files ////////////// */
+#afmeting {
+    max-width: 410px;
+    height: 494px; /*550 px*/
+    margin: 0px auto;
+    background-color: #fff;
+}
+/* ////////////// einde ////////////// */
+
 #container {
     max-width: 410px;
     height: 690px; /*550 px*/
@@ -16,6 +33,11 @@ html {
 
 body{
     font-family: 'Lato', sans-serif;
+}
+
+.error {
+    max-width: 410px;
+    margin: 0px auto; 
 }
 
 .error p {
@@ -142,10 +164,10 @@ body{
 /* ////////////// begin index.php ////////////// */
 .profiel {
     background-image:url(../images/header.png);
-    height: 196px;
+    height: 180px; /*196px*/
     background-position: -30px -10px;
     background-repeat: no-repeat;
-    padding-top: 5px; 
+    padding-top: 5px;
 }
 
 .profiel img {
@@ -169,17 +191,45 @@ body{
     text-decoration: none;
 }
 
-.profiel h1{
+/* index.php h1 */
+.l h1 {
+    padding-top: 23px;
+    margin-left: 70px;
+    text-transform: uppercase;
+    font-size: 1.2em;
+    color: #02C7C0;
+}
+
+/* index.php */
+.knopLijst {
+    padding-top: 20px;
+}
+
+.knopLijst a {
+    font-size: 0.9em;
+    background-color: #02C7C0;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+
+    text-decoration: none;
+    border-radius: 30px;
+    padding: 12px 113px;
+    margin-left: 45px;
+}
+
+/*.profiel h1{
     padding-top: 23px;
     margin-left: 98px;
     text-transform: uppercase;
     font-size: 1.2em;
     color: #fff;
-}
+}*/
 
+/* nieuweLijst.php */
 .nieuweLijst {
-    margin-left: 90px;
-    width: 220px; /*320*/
+    margin-left: 40px; /*90*/
+    width: 320px; /*220*/
     height: 35px;
     border-radius: 30px;
     border: none;
@@ -203,6 +253,10 @@ body{
     background-color: #F6F9FB;
     padding-left: 20px;
     border: 2px solid #69EAC5;
+
+    /* is nodig om in het midden te plaatsen */
+    max-width: 410px;
+    margin: 20px auto;
 }
 
 .lijsten img {
@@ -231,16 +285,23 @@ body{
     font-weight: bold;
 }
 
-/* button naar beneden verplaatsen */
-.nieuweLijst {
-    margin-top: 30px;
-}
-
-/* plusje in button */
+/* plusje in button
 .knopLijst img {
     padding-left: 128px;
     padding-top: 40px;
     float: left;
     position: absolute;
+} */
+
+/* ////////////// nieuweLijst.php ////////////// */
+/* nieuwe lijst aanmaken */
+.formuliergroep {
+    max-width: 410px;
+    margin: 0px auto;
 }
+
+/* knop */
+
 /* ////////////// einde index.php ////////////// */
+
+

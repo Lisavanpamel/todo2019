@@ -13,7 +13,6 @@
     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!--<section id="container">-->
     <!-- profiel -->
         <header>
             <div class="profiel">
@@ -24,7 +23,5 @@
                 <!--<h1>Mijn lijsten</h1>-->
             </div>
         </header>
-    <!--</section>-->
-
 </body>
 </html>
