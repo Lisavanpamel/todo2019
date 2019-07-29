@@ -86,7 +86,26 @@ class Lijst extends Database {
 
         
         // hebben we nodig in index.php
-        
+        public function toonLijsten(){
+                $query = $this->connecteren()->prepare("SELECT * FROM lijst WHERE gebruiker = :gebruiker");
+                $query->bindParam(':gebruiker', $this->gebruikersId);
+                $query->execute();
+
+                // toon bericht als er nog geen lijsten bestaan
+                if($query->rowCount() == 0){
+                        echo '<p class="empty">Je hebt nog geen lijsten aangemaakt.</p>';
+                } else {
+                        // toon alle lijsten
+                        while ($resultaat = $query->fetch(PDO::FETCH_ASSOC)) {
+                                echo
+                                '<div class="lijsten"><a href="nieuweTaak.php">
+                                <img src="images/profiel.png" alt="lijst" height="33" width="33">
+                                <p class="lijst">'. $resultaat['titel'].'</p></a>
+                                <img src="images/verwijder.png" class="verwijder" alt="lijst" height="33" width="33">
+                                </div>';
+                        }
+                }
+        }
 }
 
 
