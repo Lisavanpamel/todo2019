@@ -302,3 +302,49 @@ body{
     font-weight: bold;
 }
 /* //////// einde klasse Lijst.php //////// */
+
+
+
+
+
+.terugKnop {
+    padding-top: 15px;
+}
+
+.knopTer {
+    color: #02C7C0;
+    margin-left: 40px;
+    font-size: 0.9em;
+    text-decoration: none;
+}
+
+
+/* //////// nieuweTaak.php //////// */
+.h1T h1 {
+    /*padding-top: 23px;*/
+    margin-left: 45px;
+    text-transform: uppercase;
+    font-size: 1.2em;
+    color: #02C7C0;
+}
+
+/* button om taak aan te maken */
+.nieuweTaak {
+    margin-left: 40px;
+    width: 320px;
+    height: 35px;
+    border-radius: 30px;
+    border: none;
+    background-color: #02C7C0;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* plusje in button */
+.formuliergroep img {
+    padding-left: 130px;
+    padding-top: 10px;
+    float: left;
+    position: absolute;
+}

@@ -1,13 +1,15 @@
 <?php
 
 // bestanden toevoegen
-include_once("classes/Database.php");
+//include_once("classes/Database.php");
 
 class Taak extends Database {
         // variabelen: taken
         private $titel;
         private $begindatum;
         private $einddatum;
+        private $gebruikersId;
+        private $lijstId;
         
         
 // titel

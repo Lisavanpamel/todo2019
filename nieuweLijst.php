@@ -62,6 +62,11 @@ include_once ("header.php");
         <div class="formuliergroep">
             <input class="nieuweLijst" type="submit" value="Nieuwe Lijst" name="KnopLijst">
         </div>
+
+        <!-- terugknop -->
+        <div class="terugKnop">
+            <a href="index.php" class="knopTer">Terug</a>
+        </div> 
     </form>
 </section>
     
