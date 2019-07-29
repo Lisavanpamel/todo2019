@@ -1,6 +1,6 @@
 /* //////// header (Lisa Van Pamel, Uitloggen, ...) //////// */
 header {
-    padding-top: 80px;
+    padding-top: 70px; /*80*/
     max-width: 410px;
     margin: 0px auto; 
 }
@@ -9,7 +9,7 @@ header {
 /* //////// container //////// */
 #afmeting {
     max-width: 410px;
-    height: 494px; /*550 px*/
+    height: 510px; /*494*/
     margin: 0px auto;
     background-color: #fff;
     /* ANDERS SPATIE TUSSEN HEADER EN CONTAINER */
