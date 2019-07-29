@@ -31,14 +31,14 @@ if (isset($_SESSION['gebruiker'])){
 // header toevoegen
 include_once ("header.php");
 ?>
-    <!-- lijsten uit database halen -->
-    <!-- Hiermee lijsten laten tonen op index.php -->
-<section id="afmeting"> 
     
-    <div class="l">
+<section id="afmeting">  
+    <div class="h1">
         <h1>Mijn lijsten</h1>
     </div>
 
+    <!-- lijsten uit database halen -->
+    <!-- Hiermee lijsten laten tonen op index.php -->
     <?php
         $lijst = new Lijst();
         $lijst->setGebruikersId($_SESSION['gebruiker']);
@@ -47,6 +47,7 @@ include_once ("header.php");
 
     <!-- BUTTON: nieuwe lijst toevoegen -->
     <div class="knopLijst">
+    <img src="images/nieuw.png" alt="foto" height="14" width="14">
         <a href="nieuweLijst.php">Nieuwe lijst</a>
         <!--<img src="images/nieuw.png" alt="foto" height="14" width="14">
         <input class="nieuweLijst" type="submit" value="Nieuwe lijst">-->

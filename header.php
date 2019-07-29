@@ -18,9 +18,6 @@
             <div class="profiel">
                 <img src="images/profiel.png" alt="profielfoto" height="42" width="42">
                 <p class="naam">Lisa Van Pamel<br><a href="uitloggen.php" id="uitloggen">Uitloggen</a></p>
-
-                <!-- titel -->
-                <!--<h1>Mijn lijsten</h1>-->
             </div>
         </header>
 </body>

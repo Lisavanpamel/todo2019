@@ -1,20 +1,23 @@
-/* ////////////// header ////////////// */
+/* //////// header (Lisa Van Pamel, Uitloggen, ...) //////// */
 header {
     padding-top: 80px;
     max-width: 410px;
     margin: 0px auto; 
 }
-/* ////////////// einde header ////////////// */
+/* */
 
-/* ////////////// container voor files ////////////// */
+/* //////// container //////// */
 #afmeting {
     max-width: 410px;
     height: 494px; /*550 px*/
     margin: 0px auto;
     background-color: #fff;
+    /* ANDERS SPATIE TUSSEN HEADER EN CONTAINER */
+    padding-top: 1px;
 }
-/* ////////////// einde ////////////// */
+/* */
 
+/* //////// container registreren & aanmelden //////// */
 #container {
     max-width: 410px;
     height: 690px; /*550 px*/
@@ -26,6 +29,7 @@ header {
     background-color: #fff;
     box-shadow:  10px  10px  10px  1px #1F3F6D;
 }
+/* */
 
 html {
     background-color: #234E85 /*#E3E3E*/
@@ -35,6 +39,7 @@ body{
     font-family: 'Lato', sans-serif;
 }
 
+/* foutmeldingen */
 .error {
     max-width: 410px;
     margin: 0px auto; 
@@ -49,18 +54,21 @@ body{
     font-size: 0.9em;
     padding: 18px 15px;
 }
+/* */
 
-/* ////////////// inloggen ////////////// */
+
+/* //////// inloggen.php //////// */
 .inloggen {
     /* anders tegen bovenkant */
-    padding-top: 190px; /* 170px */
+    padding-top: 170px; /* 190px */
 
     background-image:url(../images/achtergrond.png);
-    height: 550px; /* 430px */
-    background-position: 0px 485px; /* 0px 224px */
+    height: 550px;
+    background-position: 0px 485px;
     background-repeat: no-repeat;
 }
 
+/* knop AANMELDEN bovenaan */
 .aanmeldNav {
     background-color: #fff;
     border: none;
@@ -72,7 +80,7 @@ body{
     border-bottom: 5px solid #02C7C0;
     padding-bottom: 7px;
 }
-
+/* knop REGISTREREN bovenaan */
 .registreerNav {
     background-color: #fff;
     border: none;
@@ -85,6 +93,7 @@ body{
     color: #868686;
 }
 
+/* opmaak tekstvelden + knop */
 .formulier, .knop {
     margin-left: 40px;
     width: 300px;
@@ -96,6 +105,7 @@ body{
     padding-left: 20px;
 }
 
+/* knop apart kleur geven */
 .knop {
     width: 320px;
     background-color: #02C7C0;
@@ -128,13 +138,11 @@ body{
     text-decoration: none;
     color: #02C7C0;
 }
+/* //////// einde inloggen.php //////// */
 
-/*.inloggen form input[value="Registreren"]:hover{  
-    color:  #7056CB;
-}*/
-/* ////////////// einde inloggen ////////////// */
 
-/* ////////////// registreren ////////////// */ 
+/* //////// registreren.php //////// */
+/* knop AANMELDEN bovenaan */
 .aanmeldNav2 {
     background-color: #fff;
     border: none;
@@ -145,6 +153,7 @@ body{
     padding-bottom: 7px;
     color: #868686;
 }
+/* knop REGISTREREN bovenaan */
 .registreerNav2 {
     background-color: #fff;
     border: none;
@@ -157,16 +166,16 @@ body{
     padding-bottom: 7px;
     float: right;
 }
-/* ////////////// einde registreren ////////////// */
+/* //////// einde registreren.php //////// */
 
 
-
-/* ////////////// begin index.php ////////////// */
+/* //////// header.php //////// */
 .profiel {
     background-image:url(../images/header.png);
-    height: 180px; /*196px*/
+    height: 180px;
     background-position: -30px -10px;
     background-repeat: no-repeat;
+    /* naam mooi centreren met profielfoto*/
     padding-top: 5px;
 }
 
@@ -190,17 +199,19 @@ body{
     color: #4832F1;
     text-decoration: none;
 }
+/* //////// einde header.php //////// */
 
-/* index.php h1 */
-.l h1 {
-    padding-top: 23px;
+
+/* //////// index.php //////// */
+.h1 h1 {
+    /*padding-top: 23px;*/
     margin-left: 70px;
     text-transform: uppercase;
     font-size: 1.2em;
     color: #02C7C0;
 }
 
-/* index.php */
+/* button nieuwe lijst toevoegen */
 .knopLijst {
     padding-top: 20px;
 }
@@ -218,18 +229,21 @@ body{
     margin-left: 45px;
 }
 
-/*.profiel h1{
-    padding-top: 23px;
-    margin-left: 98px;
-    text-transform: uppercase;
-    font-size: 1.2em;
-    color: #fff;
-}*/
+/* plusje in button */
+.knopLijst img {
+    padding-left: 130px;
+    padding-top: 3px;
+    float: left;
+    position: absolute;
+}
+/* //////// einde index.php //////// */
 
-/* nieuweLijst.php */
+
+/* //////// nieuweLijst.php //////// */
+/* button om lijst aan te maken */
 .nieuweLijst {
-    margin-left: 40px; /*90*/
-    width: 320px; /*220*/
+    margin-left: 40px;
+    width: 320px;
     height: 35px;
     border-radius: 30px;
     border: none;
@@ -242,8 +256,11 @@ body{
 .nieuweLijst:hover {
     background-color: #7056CB;
 }
+/* //////// einde nieuweLijst.php //////// */
 
-/* alle aangemaakte lijsten */
+
+/* //////// klasse Lijst.php //////// */
+/* lijsten */
 .lijsten {
     margin-left: 40px;
     width: 300px;
@@ -276,7 +293,7 @@ body{
     border: none;
 }
 
-/* titels van lijsten */
+/* titels lijsten (php, vakantie, ...) */
 .lijst {
     margin-top: 20px;
     font-size: 0.9em;
@@ -284,24 +301,4 @@ body{
     text-transform: uppercase;
     font-weight: bold;
 }
-
-/* plusje in button
-.knopLijst img {
-    padding-left: 128px;
-    padding-top: 40px;
-    float: left;
-    position: absolute;
-} */
-
-/* ////////////// nieuweLijst.php ////////////// */
-/* nieuwe lijst aanmaken */
-.formuliergroep {
-    max-width: 410px;
-    margin: 0px auto;
-}
-
-/* knop */
-
-/* ////////////// einde index.php ////////////// */
-
-
+/* //////// einde klasse Lijst.php //////// */

@@ -68,9 +68,6 @@ if (!empty($_POST)){
 }
 
 
-
-
-
 // Als tekstvelden niet leeg zijn
 /*if(!empty($_POST)) {
     try {
@@ -153,7 +150,7 @@ if (!empty($_POST)){
         <a href="#" class="wachtwoordver">Wachtwoord vergeten?</a>   
         <p class="geenAccount">Heb je al een account?<a href="inloggen.php" class="inloglink"> Aanmelden</a></p>
     </form>
-
+    
 </div>
 </section> 
 </body>
