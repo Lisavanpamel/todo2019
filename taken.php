@@ -1,8 +1,8 @@
 <?php
 // bestanden toevoegen 
 include_once("classes/Database.php");
-include_once("classes/Lijst.php");
 include_once("classes/Gebruiker.php");
+include_once("classes/Lijst.php");
 include_once("classes/Taak.php");
 
 
@@ -52,21 +52,14 @@ include_once ("header.php");
 
     <div class="h2">
             <h2>Te doen</h2>
-        </div>
-
-    <form method="post">
-        <!-- foutmelding -->
-        <?php if(isset($foutmelding) ): ?>
-            <div class="error"><p>
-            <?php echo $foutmelding ?></p></div>
-        <?php endif; ?>
+    </div>
+       
 
     <!-- taken uit database halen -->
-    <!-- Hiermee taken laten tonen op index.php -->
-    <?php /*
+    <?php
         $taak = new Taak();
         $taak->setGebruikersId($_SESSION['gebruiker']);
-        $taak->toonTaken();*/
+        $taak->toonTaken();
     ?>
 
         <!-- Taak veld -->
@@ -91,7 +84,6 @@ include_once ("header.php");
         <div class="terugKnop">
             <a href="index.php" class="knopTer">Terug</a>
         </div> 
-    </form>
 </section>
     
 <?php

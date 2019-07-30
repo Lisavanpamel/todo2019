@@ -73,6 +73,13 @@ class Taak extends Database {
 
                 return $this;
         }
+
+
+/* ////////////////// functies ////////////////// */
+        public function toonTaken(){
+                
+        }
+        
 }
 
 ?>
