@@ -28,11 +28,7 @@ include_once("classes/Gebruiker.php");
             // functies uitvoeren om te kijken of gegevens van de $gebruiker correct zijn
             $gebruiker->controleerAanmelden();
             
-
             // functies uitvoeren om aan te melden
-            // te doen
-
-
             // zoek gebruikersId via het gekregen email adres
             $gebruikerId = $gebruiker->zoekGebruikersIdViaEmail();
 
