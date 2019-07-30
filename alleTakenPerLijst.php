@@ -47,8 +47,12 @@ include_once ("header.php");
 
 <section id="afmeting">
     <div class="h1">
-        <h1>Alle taken</h1>
+        <h1>To-Do</h1>
     </div>
+
+    <div class="h2">
+            <h2>Te doen</h2>
+        </div>
 
     <form method="post">
         <!-- foutmelding -->
@@ -70,6 +74,12 @@ include_once ("header.php");
             <img src="images/profiel.png" alt="Taak" height="33" width="33">
             <p class="lijst">'. $resultaat['titel'].'</p></a>
         </div>
+
+
+        <div class="h2">
+            <h2>Gedaan</h2>
+        </div>
+
 
         <!-- BUTTON: nieuwe lijst toevoegen -->
         <div class="knopLijst">
