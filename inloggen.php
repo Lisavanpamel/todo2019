@@ -23,7 +23,7 @@ include_once("classes/Gebruiker.php");
 
 
         // controleren of beide waarden correct zijn
-        // via try catch (try = proberen, catch = opvangen, exeption = fouten/uitzonderingen)
+        // via try catch (try = proberen, catch = opvangen, exception = fouten/uitzonderingen)
         try {
             // functies uitvoeren om te kijken of gegevens van de $gebruiker correct zijn
             $gebruiker->controleerAanmelden();
