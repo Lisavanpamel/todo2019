@@ -47,6 +47,32 @@ class Taak extends Database {
 
                 return $this;
         }
+
+// gebruikersId  
+        public function getGebruikersId()
+        {
+                return $this->gebruikersId;
+        }
+
+        public function setGebruikersId($gebruikersId)
+        {
+                $this->gebruikersId = $gebruikersId;
+
+                return $this;
+        }
+
+// lijstId  
+        public function getLijstId()
+        {
+                return $this->lijstId;
+        }
+
+        public function setLijstId($lijstId)
+        {
+                $this->lijstId = $lijstId;
+
+                return $this;
+        }
 }
 
 ?>

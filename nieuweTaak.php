@@ -33,13 +33,14 @@ include_once ("header.php");
 
         <!-- BUTTON: nieuwe taak toevoegen -->
         <div class="formuliergroep">
-            <img src="images/nieuw.png" alt="foto" height="14" width="14">
-            <input class="nieuweTaak" type="submit" value="Nieuwe Taak" name="KnopTaak">
+            <!-- plusje img -->
+            <!--<img src="images/nieuw.png" alt="foto" height="14" width="14">-->
+            <input class="nieuweTaak" type="submit" value="bevestigen" name="KnopTaak">
         </div>
 
         <!-- terugknop -->
         <div class="terugKnop">
-            <a href="index.php" class="knopTer">Terug</a>
+            <a href="alleTakenPerLijst.php" class="knopTer">Terug</a>
         </div>    
     </form>
 
