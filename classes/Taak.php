@@ -7,6 +7,7 @@ class Taak extends Database {
         private $einddatum;
         private $gebruikersId;
         private $lijstId;
+        private $werkuren;
         
         
 // titel
@@ -74,10 +75,38 @@ class Taak extends Database {
                 return $this;
         }
 
+// werkuren
+        public function getWerkuren()
+        {
+                return $this->werkuren;
+        }
+
+        public function setWerkuren($werkuren)
+        {
+                $this->werkuren = $werkuren;
+
+                return $this;
+        }
+
 
 /* ////////////////// functies ////////////////// */
         public function toonTaken(){
-                
+                // ORDER BY ASC: taken waarvan de deadline dichtbij is staan eerst
+                $query = $this->connecteren()->prepare("SELECT * FROM taak WHERE lijstId = :lijstId ORDER BY eindDatum ASC");
+                $query->bindParam(':lijstId', $this->lijstId);
+                $query->execute();
+
+                // rowCount(): tel of er rijen zijn in de tabel met juist lijstId, of er dus taken zijn voor de lijst
+                if($query->rowCount() == 0){
+                        // geen taken
+                        echo "Deze lijst heeft nog geen taken.";
+                } else {
+                        while ($resultaat = $query->fetch(PDO::FETCH_ASSOC)){
+                                echo "titel: " . $resultaat['titel'] . ", startdatum: " . $resultaat['startDatum'] . ", einddatum: "
+                                . $resultaat['eindDatum'] . ", status: " . $resultaat['status'] . ", uren: " . $resultaat['werkuren'];
+                        }
+                        //echo "er zijn taken";
+                }
         }
         
 }
