@@ -108,6 +108,32 @@ class Taak extends Database {
                         //echo "er zijn taken";
                 }
         }
+
+
+        // hebben we nodig voor nieuweTaak.php
+        public function toevoegenAanDatabase(){
+                $titel = $this->getTitel();
+                $gebruikersId = $this->getGebruikersId();
+
+                        $query = $this->connecteren()->prepare("INSERT INTO taak(titel, startDatum, eindDatum, werkuren)VALUES(:titel, :startDatum, :eindDatum, :werkuren)");
+                        $query->bindParam(':titel', $titel);
+                        $query->bindParam(':startDatum', $begindatum);
+                        $query->bindParam(':eindDatum', $einddatum);
+                        $query->bindParam(':werkuren', $werkuren);
+                        $query->execute();
+        }
+
+        public function getTaakIdVanDatabase(){
+                $titel = $this->getTitel();
+
+                        $query = $this->connecteren()->prepare("SELECT * FROM taak WHERE titel = :titel");
+                        $query->bindParam(':titel', $titel);
+                        $query->execute();
+                        
+                        $resultaat = $query->fetch(PDO::FETCH_ASSOC);
+                        return $resultaat['id'];
+        }
+
         
 }
 
