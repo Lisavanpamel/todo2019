@@ -8,6 +8,7 @@ class Taak extends Database {
         private $gebruikersId;
         private $lijstId;
         private $werkuren;
+        private $status;
         
         
 // titel
@@ -88,8 +89,87 @@ class Taak extends Database {
                 return $this;
         }
 
+// status 
+        public function getStatus()
+        {
+                return $this->status;
+        }
+
+        public function setStatus($status)
+        {
+                $this->status = $status;
+
+                return $this;
+        }
+
 
 /* ////////////////// functies ////////////////// */
+        // kijk na of de deadline juist is ingegeven en niet in het verleden is
+        public function controleerDeadline(){
+                //controleer of datum in het juiste formaat is
+                // nog doen
+
+                //controleer of de datum niet in het verleden is
+                $vandaag = $this->begindatum;
+                $deadline = $this->einddatum;
+
+                if ($deadline < $vandaag) {
+                        throw new Exception("Deadline is in het verleden.");
+                }
+        }
+
+
+        // voeg nieuwe taak toe ZONDER deadline
+        public function nieuweTaakToevoegenZonderDeadline(){
+
+                $titel = $this->getTitel();
+                $werkuren = $this->getWerkuren();
+                $begindatum = $this->getBegindatum();
+                $status = $this->getStatus();
+                $lijstId = $this->getStatus();
+                $gebruikersId = $this->getGebruikersId();
+
+                        $query = $this->connecteren()->prepare("INSERT INTO taak(titel, gebruikersId, lijstId, startDatum, taakStatus, werkuren) VALUES (:titel, :gebruikersId, :lijstId, :startDatum, :taakStatus, :werkuren)");
+                        
+                        $query->bindParam(':titel', $titel);
+                        $query->bindParam(':gebruikersId', $gebruiker);
+                        $query->bindParam(':lijstId', $lijstId);
+                        $query->bindParam(':startDatum', $begindatum);
+                        $query->bindParam(':taakStatus', $status);
+                        $query->bindParam(':werkuren', $werkuren);
+                        $query->execute();
+        }
+
+
+        // voeg nieuwe taak toe MET deadline
+        public function nieuweTaakToevoegenMetDeadline(){
+
+                $titel = $this->getTitel();
+                $werkuren = $this->getWerkuren();
+                $begindatum = $this->getBegindatum();
+                $status = $this->getStatus();
+                $lijstId = $this->getStatus();
+                $gebruikersId = $this->getGebruikersId();
+                $einddatum = $this->getEinddatum();
+
+                        $query = $this->connecteren()->prepare("INSERT INTO taak(titel, gebruikersId, lijstId, startDatum, eindDatum, taakStatus, werkuren) VALUES (:titel, :gebruikersId, :lijstId, :startDatum, :eindDatum, :taakStatus, :werkuren)");
+                        
+                        $query->bindParam(':titel', $titel);
+                        $query->bindParam(':gebruikersId', $gebruiker);
+                        $query->bindParam(':lijstId', $lijstId);
+                        $query->bindParam(':startDatum', $begindatum);
+                        $query->bindParam(':eindDatum', $einddatum);
+                        $query->bindParam(':taakStatus', $status);
+                        $query->bindParam(':werkuren', $werkuren);
+                        $query->execute();
+        }
+
+
+
+
+
+
+
         public function toonTaken(){
                 // ORDER BY ASC: taken waarvan de deadline dichtbij is staan eerst
                 $query = $this->connecteren()->prepare("SELECT * FROM taak WHERE lijstId = :lijstId ORDER BY eindDatum ASC");
@@ -144,6 +224,8 @@ class Taak extends Database {
                         $resultaat = $query->fetch(PDO::FETCH_ASSOC);
                         return $resultaat['id'];
         }
+
+        
 
         
 }
