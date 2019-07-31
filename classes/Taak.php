@@ -99,7 +99,10 @@ class Taak extends Database {
                 // rowCount(): tel of er rijen zijn in de tabel met juist lijstId, of er dus taken zijn voor de lijst
                 if($query->rowCount() == 0){
                         // geen taken
-                        echo "Deze lijst heeft nog geen taken.";
+                        echo 
+                        '<div class="error"><p>Deze lijst heeft nog geen taken.</p></div>';
+                        //"Deze lijst heeft nog geen taken.";
+                        
                 } else {
                         while ($resultaat = $query->fetch(PDO::FETCH_ASSOC)){
                                 echo "titel: " . $resultaat['titel'] . ", startdatum: " . $resultaat['startDatum'] . ", einddatum: "

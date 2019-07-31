@@ -98,11 +98,19 @@ class Lijst extends Database {
                         // toon alle lijsten op index.php
                         while ($resultaat = $query->fetch(PDO::FETCH_ASSOC)) {
                                 echo
-                                '<div class="lijsten"><a href="taken.php">
+                                '<div class="lijsten">
+                                <img src="images/profiel.png" alt="lijst" height="33" width="33">
+                                <a href="taken.php?lijst=' . $resultaat['id'] . '" data-id="'. $resultaat['id'] . '">
+                                <p class="lijst">'. $resultaat['titel'].'</p></a>
+                                <!--<img src="images/profiel.png" alt="lijst" height="33" width="33">-->
+                                <img src="images/verwijder.png" class="verwijder" alt="lijst" height="33" width="33">
+                                </div>';
+
+                                /*'<div class="lijsten"><a href="taken.php">
                                 <img src="images/profiel.png" alt="lijst" height="33" width="33">
                                 <p class="lijst">'. $resultaat['titel'].'</p></a>
                                 <img src="images/verwijder.png" class="verwijder" alt="lijst" height="33" width="33">
-                                </div>';
+                                </div>';*/
                         }
                 }
         }

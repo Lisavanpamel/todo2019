@@ -48,7 +48,7 @@ include_once ("header.php");
         $taak = new Taak();
 
         //get lijst id
-        $lijstId = $_GET['taak'];
+        $lijstId = $_GET['lijst'];
 
         $taak->setLijstId($lijstId);
         $taak->setGebruikersId($_SESSION['gebruiker']);
