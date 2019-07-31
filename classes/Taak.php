@@ -123,7 +123,7 @@ class Taak extends Database {
                         $query->execute();
         }
 
-        public function getTaakIdVanDatabase(){
+        public function getLijstIdVanDatabase(){
                 $titel = $this->getTitel();
 
                         $query = $this->connecteren()->prepare("SELECT * FROM taak WHERE titel = :titel");

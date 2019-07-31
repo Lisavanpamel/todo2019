@@ -41,7 +41,7 @@ session_start();
 
             try {
                 $taak->toevoegenAanDatabase();
-                $taakId = $taak->getTaakIdVanDatabase();
+                $taakId = $taak->getLijstIdVanDatabase();
                 $taak->setLijstId($taakId);
                 //$taak->toevoegenAanTabelLijstGebruiker();
             } catch (Exception $e) {
