@@ -2,7 +2,6 @@
 // bestanden toevoegen 
 include_once("classes/Database.php");
 include_once("classes/Gebruiker.php");
-include_once("classes/Lijst.php");
 include_once("classes/Taak.php");
 
 
@@ -10,8 +9,64 @@ include_once("classes/Taak.php");
 session_start();
 
     if (isset($_POST['KnopTaak'])){
+        $titel = $_POST['taakNaam'];
+        $werkuren = $_POST['werkuren'];
+
+        // nieuwe taak toevoegen
+        $taak = new Taak();
+        $taak->setTitel($titel);
+        $taak->setWerkuren($werkuren);
+
+        // startdatum toeveogen: vandaag
+        // tijdzone
+        date_default_timezone_set('Europe/Brussels');
+
+        // vandaag berekenen
+        $vandaag = mktime(0, 0, 0, date("m"), date("d"), date("Y"));
+        $vandaag = date("Y-m-d");
+        $taak->setBegindatum($vandaag);
+
+        // get lijst id
+        $lijstId = $_GET['lijst'];
+
+        // lijst id toevoegen
+        $taak->setLijstId($lijstId);
+
+        // status op "te doen" zetten
+        $taak->setStatus('Te doen');
+
+        // nieuwe gebruiker toevoegen
+        $gebruiker = new Gebruiker();
+
+        // gebruikersId opvragen uit session
+        $gebruikersId = $_SESSION['gebruiker'];
+        $taak->setGebruikersId($gebruikersId);
+
+        // deadline is optioneel, kijken of deadline is ingegeven
+        if (empty($_POST['deadline'])){
+            // geen deadline, taak toevoegen aan database zonder deadline
+            try {
+                $taak->nieuweTaakToevoegenZonderDeadline();
+            } catch (Exception $e) {
+                $foutmelding = $e->getMessage();
+            }
+        } else {
+            // deadline is ingegeven
+            $deadline = $_POST['deadline'];
+            // taak toevoegen aan database met deadline
+            try {
+                // kijk na of de dealine niet in het verleden is
+                $taak->setEinddatum($deadline);
+                $taak->controleerDeadline();
+                // voeg taak toe met deadline
+                $taak->nieuweTaakToevoegenMetDeadline();
+            } catch (Exception $e) {
+                $foutmelding = $e->getMessage();
+            }
+        }   
+    }
 	    // controleer of empty niet leeg is
-	    if (empty($_POST['taakNaam'])){
+	    /*if (empty($_POST['taakNaam'])){
             // anders foutmelding
 		    $foutmelding = "Gelieve een taaknaam in te voeren."; 
         } else if (empty($_POST['begindatum'])){
@@ -48,7 +103,7 @@ session_start();
                 $foutmelding = $e->getMessage();
             }
         }
-    }
+    }*/
         
 // header toevoegen
 include_once ("header.php");
