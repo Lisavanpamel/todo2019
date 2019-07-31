@@ -34,7 +34,7 @@ include_once ("header.php");
 
 <section id="afmeting">
     <div class="h1">
-        <h1>To-Do</h1>
+        <h1>Alle taken</h1>
     </div>
 
 
@@ -55,14 +55,29 @@ include_once ("header.php");
         $taak->toonTaken();
     ?>
 
-        <!-- Taak veld 
-        <div class="lijsten"><a href="taken.php">
-            <img src="images/profiel.png" alt="Taak" height="33" width="33">
-            <p class="lijst">'. $resultaat['titel'].'</p></a>
-        </div>-->
+        <!-- moet nog naar klasse verplaatsen -->
+        <div class="takenPerLijst">
+            <div class="checkbox">
+            <!--<input class="checkbox" type="checkbox" name="checkbox">-->
+            </div>            
+            <p class="taakN">Herexamen PHP 1</p>
+            <p class="datum">Deadline: 22/08/2019</p>
+            <img src="images/verwijderKruisje.png" class="verwijder" alt="lijst" height="14" width="14"></div>
+        </div>
 
+        
         <div class="h2">
             <h2>Gedaan</h2>
+        </div>
+
+        <!-- moet nog naar klasse verplaatsen -->
+        <div class="takenPerLijstT">
+            <div class="checkbox2">
+                <img src="images/vinkje.png" alt="foto" height="25" width="25">
+            </div>            
+            <p class="taakNt">Herexamen PHP 1</p>
+            <p class="datumt">Deadline: 22/08/2019</p>
+            <img src="images/verwijderKruisje.png" class="verwijder" alt="lijst" height="14" width="14"></div>
         </div>
 
 

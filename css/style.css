@@ -309,7 +309,7 @@ body{
     margin-left: 45px;
     /* text-transform: uppercase; */
     font-size: 1.1em;
-    color: #4832F1;
+    color: #3C3C3B;
 }
 
 .h1 h1 {
@@ -361,4 +361,111 @@ body{
     padding-top: 10px;
     float: left;
     position: absolute;
+}
+/* //////// einde nieuweTaak.php //////// */
+
+
+/* //////// taken.php //////// */
+.takenPerLijst {
+    width: 300px;
+    height: 60px; /*35*/
+    margin-bottom: 20px;
+    /*padding: 5px 0px;*/
+
+    /* is nodig om in het midden te plaatsen */
+    max-width: 410px;
+    margin: 20px auto;
+    border-bottom: 2px solid #F0EEED;
+}
+
+.checkbox {
+    height: 25px;
+    width: 25px;
+    border: 3px solid #69EAC5;
+    border-radius: 30px;
+    float: left;
+    margin-top: 8px; /*12*/
+    margin-right: 15px;
+}
+
+/* titel van taak */
+.taakN {
+    margin-top: 20px;
+    font-size: 1.1em;
+    color: #4832F1;
+    font-weight: bold;
+    margin: 0px 0px 5px 0px;
+}
+/* ondertitel */
+.datum {
+    color: #3C3C3B;
+    font-size: 0.9em;
+    padding-top: 0px;
+
+    margin: 0px;
+}
+
+.takenPerLijst .verwijder {
+    float: right;
+    margin-top: -28px;
+}
+/* //////// einde taken.php //////// */
+
+
+
+
+
+
+
+
+
+
+
+/* test als taak gedaan is */
+.takenPerLijstT {
+    width: 300px;
+    height: 60px; /*35*/
+    margin-bottom: 20px;
+
+    /* is nodig om in het midden te plaatsen */
+    max-width: 410px;
+    margin: 20px auto;
+    border-bottom: 2px solid #F0EEED;
+}
+
+.checkbox2 {
+    height: 25px;
+    width: 25px;
+    background-color: #69EAC5;
+    border: 3px solid #69EAC5;
+    border-radius: 30px;
+    float: left;
+    margin-top: 8px; /*12*/
+    margin-right: 15px;
+}
+
+/* titel van taak */
+.taakNt {
+    margin-top: 20px;
+    font-size: 1.1em;
+    color: #4832F1;
+    font-weight: bold;
+    margin: 0px 0px 5px 0px;
+
+    Text-decoration: line-through;
+}
+/* ondertitel */
+.datumt {
+    color: #3C3C3B;
+    font-size: 0.9em;
+    padding-top: 0px;
+
+    margin: 0px;
+
+    Text-decoration: line-through;
+}
+
+.takenPerLijstT .verwijder {
+    float: right;
+    margin-top: -28px;
 }
