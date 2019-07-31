@@ -107,6 +107,14 @@ class Taak extends Database {
                         while ($resultaat = $query->fetch(PDO::FETCH_ASSOC)){
                                 echo "titel: " . $resultaat['titel'] . ", startdatum: " . $resultaat['startDatum'] . ", einddatum: "
                                 . $resultaat['eindDatum'] . ", status: " . $resultaat['status'] . ", uren: " . $resultaat['werkuren'];
+                                /* <div class="takenPerLijstT">
+                                        <div class="checkbox2">
+                                                <img src="images/vinkje.png" alt="foto" height="25" width="25">
+                                        </div>            
+                                                <p class="taakNt">'. $resultaat['titel'].'</p>
+                                                <p class="datumt">'. $resultaat['eindDatum'].'</p>
+                                                <img src="images/verwijderKruisje.png" class="verwijder" alt="lijst" height="14" width="14"></div>
+                                  </div>*/
                         }
                         //echo "er zijn taken";
                 }
