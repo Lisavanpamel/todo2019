@@ -415,7 +415,7 @@ body{
 
 .takenPerLijst .verwijder {
     float: right;
-    margin-top: -28px;
+    margin-top: -55px; /*28*/
 }
 /* //////// einde taken.php //////// */
 
