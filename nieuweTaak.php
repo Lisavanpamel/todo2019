@@ -4,17 +4,23 @@ include_once("classes/Database.php");
 include_once("classes/Gebruiker.php");
 include_once("classes/Taak.php");
 
+include_once("classes/Lijst.php");
+
 
 // Sessie starten
 session_start();
 
     if (isset($_POST['KnopTaak'])){
         $titel = $_POST['taakNaam'];
+        //$begindatum = $_POST['begindatum'];
+        //$einddatum = $_POST['einddatum'];
         $werkuren = $_POST['werkuren'];
 
         // nieuwe taak toevoegen
         $taak = new Taak();
         $taak->setTitel($titel);
+        //$taak->setBegindatum($begindatum);
+        //$taak->setEinddatum($einddatum);
         $taak->setWerkuren($werkuren);
 
         // startdatum toeveogen: vandaag
@@ -65,6 +71,8 @@ session_start();
             }
         }
     }
+
+    
     
 	    // controleer of empty niet leeg is
 	    /*if (empty($_POST['taakNaam'])){
