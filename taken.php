@@ -54,17 +54,6 @@ include_once ("header.php");
         $taak->setGebruikersId($_SESSION['gebruiker']);
         $taak->toonTaken();
     ?>
-
-        <!-- moet nog naar klasse verplaatsen -->
-        <!--<div class="takenPerLijst">
-            <div class="checkbox">
-            <!--<input class="checkbox" type="checkbox" name="checkbox">
-            </div>            
-            <p class="taakN">Herexamen PHP 1</p>
-            <p class="datum">Deadline: 22/08/2019</p>
-            <img src="images/verwijderKruisje.png" class="verwijder" alt="lijst" height="14" width="14"></div>
-        </div>-->
-
         
         <div class="h2">
             <h2>Gedaan</h2>

@@ -72,26 +72,6 @@ session_start();
         }
     }
 
-    
-    
-	    // controleer of empty niet leeg is
-	    /*if (empty($_POST['taakNaam'])){
-            // anders foutmelding
-		    $foutmelding = "Gelieve een taaknaam in te voeren."; 
-        } else if (empty($_POST['begindatum'])){
-		    $foutmelding = "Gelieve een begindatum in te voeren."; 
-        } else if (empty($_POST['einddatum'])){
-		    $foutmelding = "Gelieve een einddatum in te voeren."; 
-        } else if (empty($_POST['werkuren'])){
-		    $foutmelding = "Gelieve x-aantal werkuren in te voeren."; 
-        } else {
-            // waarden toevoegen aan variabelen
-            $taakNaam = $_POST['taakNaam'];
-            $begindatum = $_POST['begindatum'];
-            $einddatum = $_POST['einddatum'];
-            $werkuren = $_POST['werkuren'];
-
-        }*/
         
 // header toevoegen
 include_once ("header.php");
@@ -138,10 +118,10 @@ include_once ("header.php");
             <input class="nieuweTaak" type="submit" value="bevestigen" name="KnopTaak">
         </div>
 
-        <!-- terugknop -->
+        <!-- terugknop 
         <div class="terugKnop">
             <a href="taken.php" class="knopTer">Terug</a>
-        </div>    
+        </div> -->   
     </form>
 </section>
 

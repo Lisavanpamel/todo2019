@@ -185,18 +185,21 @@ class Taak extends Database {
                         
                 } else {
                         while ($resultaat = $query->fetch(PDO::FETCH_ASSOC)){
-                                echo "titel: " . $resultaat['titel'] . ", startdatum: " . $resultaat['startDatum'] . ", einddatum: "
-                                . $resultaat['eindDatum'] . ", status: " . $resultaat['status'] . ", uren: " . $resultaat['werkuren'];
-                                /* <div class="takenPerLijstT">
-                                        <div class="checkbox2">
-                                                <img src="images/vinkje.png" alt="foto" height="25" width="25">
-                                        </div>            
-                                                <p class="taakNt">'. $resultaat['titel'].'</p>
-                                                <p class="datumt">'. $resultaat['eindDatum'].'</p>
-                                                <img src="images/verwijderKruisje.png" class="verwijder" alt="lijst" height="14" width="14"></div>
-                                  </div>*/
+                                echo
+                                '<div class="takenPerLijst">
+                                <div class="checkbox">
+                                        <img src="images/vinkje.png" alt="foto" height="25" width="25">
+                                </div>            
+                                        <p class="taakN">'. $resultaat['titel'].'</p>
+                                        <p class="datum"><strong>Startdatum:</strong> '. $resultaat['startDatum'].'</p>
+                                        <p class="datum"><strong>Deadline:</strong> ' . $resultaat['eindDatum'].'</p>
+                                        <p class="datum"><strong>werkuren:</strong> '. $resultaat['werkuren'].'</p>
+                                        <img src="images/verwijderKruisje.png" class="verwijder" alt="lijst" height="14" width="14"></div>
+                                </div>';
+
+                                /*echo "titel: " . $resultaat['titel'] . ", startdatum: " . $resultaat['startDatum'] . ", einddatum: "
+                                . $resultaat['eindDatum'] . ", status: " . $resultaat['status'] . ", uren: " . $resultaat['werkuren'];*/
                         }
-                        //echo "er zijn taken";
                 }
         }
 
