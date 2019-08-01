@@ -187,14 +187,15 @@ class Taak extends Database {
                         while ($resultaat = $query->fetch(PDO::FETCH_ASSOC)){
                                 echo
                                 '<div class="takenPerLijst">
-                                <div class="checkbox">
-                                        <img src="images/vinkje.png" alt="foto" height="25" width="25">
-                                </div>            
-                                        <p class="taakN">'. $resultaat['titel'].'</p>
+                                        <div class="checkbox">
+                                                <img src="images/vinkje.png" alt="foto" height="25" width="25">
+                                        </div>
+                                                   
+                                        <a href="taakDetail.php"><p class="taakN">'. $resultaat['titel'].'</p> 
                                         <p class="datum"><strong>Startdatum:</strong> '. $resultaat['startDatum'].'</p>
                                         <p class="datum"><strong>Deadline:</strong> ' . $resultaat['eindDatum'].'</p>
                                         <p class="datum"><strong>Werkuren:</strong> '. $resultaat['werkuren'].'</p>
-                                        <img src="images/verwijderKruisje.png" class="verwijder" alt="lijst" height="14" width="14"></div>
+                                        <img src="images/verwijderKruisje.png" class="verwijder" alt="lijst" height="14" width="14"></a>
                                 </div>';
 
                                 /*echo "titel: " . $resultaat['titel'] . ", startdatum: " . $resultaat['startDatum'] . ", einddatum: "

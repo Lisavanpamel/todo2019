@@ -389,6 +389,10 @@ body{
     margin-right: 15px;
 }
 
+/* lijn onder tekst weg */
+.takenPerLijst a {
+   text-decoration: none;
+}
 /* titel van taak */
 .taakN {
     margin-top: 20px;
@@ -415,6 +419,14 @@ body{
 }
 /* //////// einde taken.php //////// */
 
+
+/* //////// taakDetail.php //////// */
+textarea {
+    width: 300px;
+    margin-left: 45px;
+    margin-bottom: 10px;
+}
+/* //////// einde taakDetail.php //////// */
 
 
 
@@ -473,3 +485,4 @@ body{
     float: right;
     margin-top: -28px;
 }
+
