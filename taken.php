@@ -84,7 +84,8 @@ include_once ("header.php");
         <!-- BUTTON: nieuwe lijst toevoegen -->
         <div class="knopLijst">
         <img src="images/nieuw.png" alt="foto" height="14" width="14">
-            <a href="nieuweTaak.php">Nieuwe Taak</a>
+            <!-- aan de url de juiste lijst id meegeven -->
+            <a href="nieuweTaak.php?lijst=<?php echo $lijstId ?>" data-id=<?php echo $lijstId ?>> Nieuw taak</a>
         </div>
 
         <!-- terugknop -->

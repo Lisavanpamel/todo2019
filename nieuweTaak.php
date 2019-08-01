@@ -4,7 +4,7 @@ include_once("classes/Database.php");
 include_once("classes/Gebruiker.php");
 include_once("classes/Taak.php");
 
-include_once("classes/Lijst.php");
+//include_once("classes/Lijst.php");
 
 
 // Sessie starten
