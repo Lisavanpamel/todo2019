@@ -83,28 +83,7 @@ session_start();
             $einddatum = $_POST['einddatum'];
             $werkuren = $_POST['werkuren'];
 
-            // nieuwe taak toevoegen
-            $taak = new Taak();
-            //$taak->setTitel($titel);
-
-            // nieuwe gebruiker toevoegen
-            $gebruiker = new Gebruiker();
-            
-            // gebruikersId opvragen uit session
-            $gebruikersId = $_SESSION['gebruiker'];
-            $taak->setGebruikersId($gebruikersId);
-
-
-            try {
-                $taak->toevoegenAanDatabase();
-                $taakId = $taak->getLijstIdVanDatabase();
-                $taak->setLijstId($taakId);
-                //$taak->toevoegenAanTabelLijstGebruiker();
-            } catch (Exception $e) {
-                $foutmelding = $e->getMessage();
-            }
-        }
-    }*/
+        }*/
         
 // header toevoegen
 include_once ("header.php");
@@ -156,16 +135,6 @@ include_once ("header.php");
             <a href="taken.php" class="knopTer">Terug</a>
         </div>    
     </form>
-
-             
-        
-    <?php
-        // taken uit database halen
-        // taken laten tonen op nieuweTaak.php
-        /*$taak = new Taak();
-        $lijst->setGebruikersId($_SESSION['gebruiker']);
-        $lijst->toonTaken();*/
-    ?>
 </section>
 
 <?php 

@@ -56,14 +56,14 @@ include_once ("header.php");
     ?>
 
         <!-- moet nog naar klasse verplaatsen -->
-        <div class="takenPerLijst">
+        <!--<div class="takenPerLijst">
             <div class="checkbox">
-            <!--<input class="checkbox" type="checkbox" name="checkbox">-->
+            <!--<input class="checkbox" type="checkbox" name="checkbox">
             </div>            
             <p class="taakN">Herexamen PHP 1</p>
             <p class="datum">Deadline: 22/08/2019</p>
             <img src="images/verwijderKruisje.png" class="verwijder" alt="lijst" height="14" width="14"></div>
-        </div>
+        </div>-->
 
         
         <div class="h2">
@@ -71,14 +71,14 @@ include_once ("header.php");
         </div>
 
         <!-- moet nog naar klasse verplaatsen -->
-        <div class="takenPerLijstT">
+        <!--<div class="takenPerLijstT">
             <div class="checkbox2">
                 <img src="images/vinkje.png" alt="foto" height="25" width="25">
             </div>            
             <p class="taakNt">Herexamen PHP 1</p>
             <p class="datumt">Deadline: 22/08/2019</p>
             <img src="images/verwijderKruisje.png" class="verwijder" alt="lijst" height="14" width="14"></div>
-        </div>
+        </div>-->
 
 
         <!-- BUTTON: nieuwe lijst toevoegen -->
