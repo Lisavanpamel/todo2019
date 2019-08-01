@@ -126,8 +126,8 @@ class Taak extends Database {
                 $werkuren = $this->getWerkuren();
                 $begindatum = $this->getBegindatum();
                 $status = $this->getStatus();
-                $lijstId = $this->getStatus();
-                $gebruikersId = $this->getGebruikersId();
+                $lijstId = $this->getLijstId();
+                $gebruiker = $this->getGebruikersId();
 
                         $query = $this->connecteren()->prepare("INSERT INTO taak(titel, gebruikersId, lijstId, startDatum, taakStatus, werkuren) VALUES (:titel, :gebruikersId, :lijstId, :startDatum, :taakStatus, :werkuren)");
                         
@@ -148,8 +148,8 @@ class Taak extends Database {
                 $werkuren = $this->getWerkuren();
                 $begindatum = $this->getBegindatum();
                 $status = $this->getStatus();
-                $lijstId = $this->getStatus();
-                $gebruikersId = $this->getGebruikersId();
+                $lijstId = $this->getLijstId();
+                $gebruiker = $this->getGebruikersId();
                 $einddatum = $this->getEinddatum();
 
                         $query = $this->connecteren()->prepare("INSERT INTO taak(titel, gebruikersId, lijstId, startDatum, eindDatum, taakStatus, werkuren) VALUES (:titel, :gebruikersId, :lijstId, :startDatum, :eindDatum, :taakStatus, :werkuren)");
@@ -202,7 +202,7 @@ class Taak extends Database {
 
 
         // hebben we nodig voor nieuweTaak.php
-        public function toevoegenAanDatabase(){
+        /*public function toevoegenAanDatabase(){
                 $titel = $this->getTitel();
                 $gebruikersId = $this->getGebruikersId();
 
@@ -223,7 +223,7 @@ class Taak extends Database {
                         
                         $resultaat = $query->fetch(PDO::FETCH_ASSOC);
                         return $resultaat['id'];
-        }
+        }*/
 
         
 

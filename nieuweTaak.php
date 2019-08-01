@@ -63,8 +63,9 @@ session_start();
             } catch (Exception $e) {
                 $foutmelding = $e->getMessage();
             }
-        }   
+        }
     }
+    
 	    // controleer of empty niet leeg is
 	    /*if (empty($_POST['taakNaam'])){
             // anders foutmelding
