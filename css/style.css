@@ -319,8 +319,6 @@ body{
     color: #02C7C0;
 }
 
-
-
 .terugKnop {
     padding-top: 20px;
 }
@@ -413,10 +411,17 @@ body{
     margin-left: 55px;
 }
 
+/* verwijder kruisje */
 .takenPerLijst .verwijder {
     float: right;
-    margin-top: -55px; /*28*/
+    margin-top: -50px; /*55*/
 }
+/* bewerken van taak */
+.takenPerLijst .bewerk {
+    float: right;
+    margin-top: -90px;
+}
+
 /* //////// einde taken.php //////// */
 
 

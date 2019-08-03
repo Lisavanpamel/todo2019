@@ -188,14 +188,14 @@ class Taak extends Database {
                                 echo
                                 '<div class="takenPerLijst">
                                         <div class="checkbox">
-                                                <img src="images/vinkje.png" alt="foto" height="25" width="25">
-                                        </div>
+                                                <img src="images/vinkje.png" alt="foto" height="25" width="25">                                        </div>
                                                    
                                         <a href="taakDetail.php"><p class="taakN">'. $resultaat['titel'].'</p> 
                                         <p class="datum"><strong>Startdatum:</strong> '. $resultaat['startDatum'].'</p>
                                         <p class="datum"><strong>Deadline:</strong> ' . $resultaat['eindDatum'].'</p>
                                         <p class="datum"><strong>Werkuren:</strong> '. $resultaat['werkuren'].'</p></a>
                                         <img src="images/verwijderKruisje.png" class="verwijder" alt="lijst" height="14" width="14">
+                                        <img src="images/bewerkingIcoon.png" class="bewerk" alt="lijst" height="14" width="14">
                                 </div>';
 
                                 /*echo "titel: " . $resultaat['titel'] . ", startdatum: " . $resultaat['startDatum'] . ", einddatum: "
