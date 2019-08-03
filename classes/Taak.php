@@ -187,10 +187,11 @@ class Taak extends Database {
                         while ($resultaat = $query->fetch(PDO::FETCH_ASSOC)){
                                 echo
                                 '<div class="takenPerLijst">
-                                        <div class="checkbox">
-                                                <input class="checkboxVinkje" type="checkbox" name="checkbox>
-                                                <img src="images/vinkje.png" alt="foto" height="25" width="25">
-                                        </div>
+
+                                        <label class="con">
+                                                <input type="checkbox" name="checkbox">
+                                                <span class="checkmark"></span>
+                                        </label>
         
                                         <a href="taakDetail.php"><p class="taakN">'. $resultaat['titel'].'</p> 
                                         <p class="datum"><strong>Startdatum:</strong> '. $resultaat['startDatum'].'</p>
