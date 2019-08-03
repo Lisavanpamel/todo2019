@@ -99,7 +99,7 @@ class Lijst extends Database {
                         while ($resultaat = $query->fetch(PDO::FETCH_ASSOC)) {
                                 echo
                                 '<div class="lijsten">
-                                <img src="images/profiel.png" alt="lijst" height="33" width="33">
+                                <img src="images/lijsten.png" alt="lijst" height="36" width="36">
                                 <a href="taken.php?lijst=' . $resultaat['id'] . '" data-id="'. $resultaat['id'] . '">
                                 <p class="lijst">'. $resultaat['titel'].'</p></a>
                                 <!--<img src="images/profiel.png" alt="lijst" height="33" width="33">-->
