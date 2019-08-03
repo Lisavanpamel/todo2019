@@ -100,19 +100,19 @@ include_once ("header.php");
             <input class="formulier" type="text" name="taakNaam" placeholder="Taak naam">
         </div>
 
-        <!-- begindatum -->
+        <!-- begindatum
         <div class="formuliergroep">
             <input class="formulier" type="text" name="begindatum" placeholder="Begindatum (JJJJ-mm-dd)">
+        </div> -->
+
+        <!-- werkuren -->
+        <div class="formuliergroep">
+            <input class="formulier" type="text" name="werkuren" placeholder="Werkuren">
         </div>
 
         <!-- einddatum -->
         <div class="formuliergroep">
             <input class="formulier" type="text" name="einddatum" placeholder="Einddatum (JJJJ-mm-dd)">
-        </div>
-
-        <!-- werkuren -->
-        <div class="formuliergroep">
-            <input class="formulier" type="text" name="werkuren" placeholder="Werkuren">
         </div>
 
 
