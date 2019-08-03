@@ -185,14 +185,24 @@ class Taak extends Database {
                         
                 } else {
                         while ($resultaat = $query->fetch(PDO::FETCH_ASSOC)){
+                                // kijk de status van de taak na
+                                if ($resultaat['taakStatus'] != "Gedaan") {
+                                        // status = nog de doen
+                                        $checkbox = '<label class="con">
+                                        <input type="checkbox" data-value="' .$resultaat['id'] . '">
+                                        <span class="checkmark"></span>
+                                        </label>';
+                                } else {
+                                        // status = gedaan, checked toevoegen
+                                        $checkbox = '<label class="con">
+                                        <input checked type="checkbox" data-value="' .$resultaat['id'] . '">
+                                        <span class="checkmark"></span>
+                                        </label>';
+                                }
                                 echo
                                 '<div class="takenPerLijst">
+                                        <div class="media-input">'. $checkbox .'</div>
 
-                                        <label class="con">
-                                                <input type="checkbox" name="checkbox">
-                                                <span class="checkmark"></span>
-                                        </label>
-        
                                         <a href="taakDetail.php"><p class="taakN">'. $resultaat['titel'].'</p> 
                                         <p class="datum"><strong>Startdatum:</strong> '. $resultaat['startDatum'].'</p>
                                         <p class="datum"><strong>Deadline:</strong> ' . $resultaat['eindDatum'].'</p>
