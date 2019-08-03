@@ -9,6 +9,7 @@ class Taak extends Database {
         private $lijstId;
         private $werkuren;
         private $status;
+        private $taakId;
         
         
 // titel
@@ -102,7 +103,21 @@ class Taak extends Database {
                 return $this;
         }
 
+// taakId 
+        public function getTaakId()
+        {
+                return $this->taakId;
+        }
 
+        public function setTaakId($taakId)
+        {
+                $this->taakId = $taakId;
+
+                return $this;
+        }
+
+
+        
 /* ////////////////// functies ////////////////// */
         // kijk na of de deadline juist is ingegeven en niet in het verleden is
         public function controleerDeadline(){
@@ -165,11 +180,6 @@ class Taak extends Database {
         }
 
 
-
-
-
-
-
         public function toonTaken(){
                 // ORDER BY ASC: taken waarvan de deadline dichtbij is staan eerst
                 $query = $this->connecteren()->prepare("SELECT * FROM taak WHERE lijstId = :lijstId ORDER BY eindDatum ASC");
@@ -216,8 +226,6 @@ class Taak extends Database {
                         }
                 }
         }
-
-        
 }
 
 ?>
