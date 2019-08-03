@@ -11,6 +11,10 @@ include_once("classes/Taak.php");
 session_start();
 
     if (isset($_POST['KnopTaak'])){
+        if (empty($_POST['taakNaam'])){
+            // anders foutmelding
+		    $foutmelding = "Gelieve een taaknaam in te voeren."; 
+	    } else {
         $titel = $_POST['taakNaam'];
         //$begindatum = $_POST['begindatum'];
         //$einddatum = $_POST['einddatum'];
@@ -69,6 +73,7 @@ session_start();
             } catch (Exception $e) {
                 $foutmelding = $e->getMessage();
             }
+          }
         }
     }
 
