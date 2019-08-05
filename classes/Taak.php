@@ -226,6 +226,31 @@ class Taak extends Database {
                         }
                 }
         }
+
+
+
+
+        public function taakIsGedaan(){
+                $status = "Gedaan";
+
+                $query = $this->connecteren()->prepare("UPDATE taak SET taakStatus = :taakStatus WHERE id = :id AND gebruikersId = :gerbuikersId");
+                $query->bindParam(':id', $this->taakId);
+                $query->bindParam(':taakStatus', $status);
+                $query->bindParam(':gebruikers', $this->gebruikersId);
+                $query->execute();
+        }
+        
+        
+        public function taakTeDoen(){
+                $status = "Te doen";
+
+                $query = $this->connecteren()->prepare("UPDATE taak SET taakStatus = :taakStatus WHERE id = :id AND gebruikersId = :gerbuikersId");
+                $query->bindParam(':id', $this->taakId);
+                $query->bindParam(':taakStatus', $status);
+                $query->bindParam(':gebruikers', $this->gebruikersId);
+                $query->execute();
+        }
+
 }
 
 ?>
