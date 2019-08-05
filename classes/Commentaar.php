@@ -61,6 +61,22 @@ class Commentaar extends Database {
         }
 
 /* ////////////////// functies ////////////////// */
+        // Voeg commentaar toe
+        public function voegNieuwCommentaarToe(){
+
+              $reactie = $this->getReactie();
+              $taakId = $this->getTaakId();
+              $gebruikersId = $this->getGebruikersId();
+              $lijstId = $this->getLijstId();
+
+                      $query = $this->connecteren()->prepare("INSERT INTO commentaar(reactie, taakId, gebruikersId, lijstId) VALUES (:reactie, :taakId, :gebruikersId, :lijstId);");
+                      
+                      $query->bindParam(':reactie', $reactie);
+                      $query->bindParam(':taakId', $taakId);
+                      $query->bindParam(':gebruikersId', $gebruikersId);
+                      $query->bindParam(':lijstId', $lijstId);
+                      $query->execute();
+        }
 
 }
 
