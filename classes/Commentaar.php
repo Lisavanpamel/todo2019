@@ -86,6 +86,7 @@ class Commentaar extends Database {
                 $query->execute();
 
                 // Te Doen
+                // lay-out van reactie
         }
 
 }

@@ -45,8 +45,13 @@ include_once ("header.php");
         <?php echo $foutmelding ?></p></div>
         <?php endif; ?>
 
-        <!-- commentaar weergeven -->
-        <!-- te doen -->
+        <!-- reactie weergeven -->
+        <?php
+        $commentaar = new Commentaar();
+        $commentaar->setTaakId();
+        $commentaar->reactieVanTaakWeergeven();
+        ?>
+
 
         <textarea class="reactie" maxlength="150" name="reactie" placeholder="Voeg een reactie toe!"></textarea>
 
