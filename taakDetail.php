@@ -9,13 +9,24 @@ include_once("classes/Commentaar.php");
 // Sessie starten
 session_start();
 
-// gebruikersId ophalen
-$gebruiker = new Gebruiker();
-$gebruiker->setGebruikersnaam($_SESSION['gebruiker']);
-$gebruikersId = $gebruiker->getGebruikersId();
+    if (isset($_POST['knopCommentaar'])){
+        if (empty($_POST['reactie'])){
+            // anders foutmelding
+            $foutmelding = "Gelieve een reactie te schrijven."; 
+        } else {
+        $reactie = $_POST['reactie'];
 
-// taakId ophalen
-// te doen
+        // gebruikersId ophalen
+        $gebruiker = new Gebruiker();
+        $gebruiker->setGebruikersnaam($_SESSION['gebruiker']);
+        $gebruikersId = $gebruiker->getGebruikersId();
+
+        // taakId ophalen
+        // te doen
+
+        }
+    }
+
 
 // header toevoegen
 include_once ("header.php");
@@ -33,6 +44,9 @@ include_once ("header.php");
             <div class="error"><p>
         <?php echo $foutmelding ?></p></div>
         <?php endif; ?>
+
+        <!-- commentaar weergeven -->
+        <!-- te doen -->
 
         <textarea class="reactie" maxlength="150" name="reactie" placeholder="Voeg een reactie toe!"></textarea>
 
