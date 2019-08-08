@@ -78,6 +78,16 @@ class Commentaar extends Database {
                       $query->execute();
         }
 
+
+        public function reactieVanTaakWeergeven(){
+                $query = $this->connecteren()->prepare("SELECT * FROM commentaar WHERE taakId = :id");
+                
+                $query->bindParam(':id', $this->taakId);
+                $query->execute();
+
+                // Te Doen
+        }
+
 }
 
 
