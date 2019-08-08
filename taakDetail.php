@@ -1,4 +1,22 @@
 <?php
+// bestanden toevoegen 
+include_once("classes/Database.php");
+include_once("classes/Gebruiker.php");
+include_once("classes/Taak.php");
+include_once("classes/Commentaar.php");
+
+
+// Sessie starten
+session_start();
+
+// gebruikersId ophalen
+$gebruiker = new Gebruiker();
+$gebruiker->setGebruikersnaam($_SESSION['gebruiker']);
+$gebruikersId = $gebruiker->getGebruikersId();
+
+// taakId ophalen
+// te doen
+
 // header toevoegen
 include_once ("header.php");
 ?>
