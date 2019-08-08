@@ -48,7 +48,7 @@ include_once ("header.php");
         <!-- reactie weergeven -->
         <?php
         $commentaar = new Commentaar();
-        $commentaar->setTaakId();
+        //$commentaar->setTaakId();
         $commentaar->reactieVanTaakWeergeven();
         ?>
 
