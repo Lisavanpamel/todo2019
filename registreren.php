@@ -17,6 +17,7 @@ if (!empty($_POST)){
         $foutmelding = "Herhaal je wachtwoord alstublieft."; 
     } else {
         // waarden toevoegen aan variabelen
+        // Waarden uit tekstvelden halen (v.b ik typ Lisa, $gebruikersnaam is dan Lisa)
         $gebruikersnaam = $_POST['gebruikersnaam'];
         $email = $_POST['email'];
         $wachtwoord = $_POST['wachtwoord'];

@@ -16,18 +16,16 @@ session_start();
 		    $foutmelding = "Gelieve een taaknaam in te voeren."; 
 	    } else {
         $titel = $_POST['taakNaam'];
-        //$begindatum = $_POST['begindatum'];
-        //$einddatum = $_POST['einddatum'];
         $werkuren = $_POST['werkuren'];
+        //$einddatum = $_POST['einddatum'];
 
         // nieuwe taak toevoegen
         $taak = new Taak();
         $taak->setTitel($titel);
-        //$taak->setBegindatum($begindatum);
-        //$taak->setEinddatum($einddatum);
         $taak->setWerkuren($werkuren);
+        //$taak->setEinddatum($einddatum);
 
-        // startdatum toeveogen: vandaag
+        // startdatum toevoegen: vandaag
         // tijdzone
         date_default_timezone_set('Europe/Brussels');
 
