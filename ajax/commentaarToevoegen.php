@@ -1,6 +1,6 @@
 <?php
 // bestanden toevoegen 
-include_once("../classes/Database.php");
+/*include_once("../classes/Database.php");
 include_once("../classes/Gebruiker.php");
 include_once("../classes/Taak.php");
 include_once("../classes/Commentaar.php");
@@ -25,6 +25,6 @@ if(!empty($_POST)){
     } catch (Exception $e) {
         $foutmelding = $e->getMessage();
     }
-}
+}*/
 
 ?>

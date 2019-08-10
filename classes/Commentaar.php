@@ -67,14 +67,16 @@ class Commentaar extends Database {
               $reactie = $this->getReactie();
               $taakId = $this->getTaakId();
               $gebruikersId = $this->getGebruikersId();
-              $lijstId = $this->getLijstId();
+              //$lijstId = $this->getLijstId();
 
-                      $query = $this->connecteren()->prepare("INSERT INTO commentaar(reactie, taakId, gebruikersId, lijstId) VALUES (:reactie, :taakId, :gebruikersId, :lijstId);");
+                      //$query = $this->connecteren()->prepare("INSERT INTO commentaar(reactie, taakId, gebruikersId, lijstId) VALUES (:reactie, :taakId, :gebruikersId, :lijstId);");
                       
+                      $query = $this->connecteren()->prepare("INSERT INTO commentaar(reactie, taakId, gebruikersId) VALUES (:reactie, :taakId, :gebruikersId);");
+
                       $query->bindParam(':reactie', $reactie);
                       $query->bindParam(':taakId', $taakId);
                       $query->bindParam(':gebruikersId', $gebruikersId);
-                      $query->bindParam(':lijstId', $lijstId);
+                      //$query->bindParam(':lijstId', $lijstId);
                       $query->execute();
         }
 
@@ -85,8 +87,32 @@ class Commentaar extends Database {
                 $query->bindParam(':id', $this->taakId);
                 $query->execute();
 
-                // Te Doen
-                // lay-out van reactie
+                if($query->rowCount() == 0){
+                        // geen reacties
+                        echo
+                        '<div class="error"><p>Deze taak heeft nog geen reacties.</p></div>';
+                } else {
+                        // wel reacties
+                        while ($resultaat = $query->fetch(PDO::FETCH_ASSOC)) {
+                                // get de gebruikersID van het resultaat
+                                $gebruiker = $resultaat['gebruikersId'];
+
+                                // zoek via de gebruikersId de naam van de gebruiker
+                                $q = $this->connecteren()->prepare("SELECT * FROM gebruiker WHERE id = :gebruikersId");
+                                $q->bindParam(':gebruikersId', $gebruiker);
+                                $q->execute();
+
+                                while ($resultaatGebruiker = $q->fetch(PDO::FETCH_ASSOC)) {
+                                        echo
+                                        '<div class="media reactions">
+                                                <div class= media-body">
+                                                        <h5>'.$resultaatGebruiker['naam'].'</h5>
+                                                        <p class="comment">' . $resultaat['reactie'] . '</p>
+                                                </div>
+                                        </div>';
+                                }
+                        }
+                }
         }
 
 }

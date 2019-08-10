@@ -9,6 +9,10 @@ include_once("classes/Commentaar.php");
 // Sessie starten
 session_start();
 
+    // taakId ophalen uit URL
+    $taakId = $_GET['taak'];
+
+    // reactie toevoegen
     if (isset($_POST['knopCommentaar'])){
         if (empty($_POST['reactie'])){
             // anders foutmelding
@@ -16,17 +20,22 @@ session_start();
         } else {
         $reactie = $_POST['reactie'];
 
-        // gebruikersId ophalen
-        $gebruiker = new Gebruiker();
-        $gebruiker->setGebruikersnaam($_SESSION['gebruiker']);
-        $gebruikersId = $gebruiker->getGebruikersId();
+        // nieuwe reactie toevoegen
+        $commentaar = new Commentaar();
+        $commentaar->setReactie($reactie);
+        $commentaar->setTaakId($taakId);
+        // gebruikersId ophalen en toevoegen
+        $commentaar->setGebruikersId($_SESSION['gebruiker']);
+        // $commentaar->setLijstId($lijstId);
 
-        // taakId ophalen
-        // te doen
+            try {
+                $commentaar->voegNieuwCommentaarToe();
+            } catch (Exception $e) {
+                $foutmelding = $e->getMessage();
+            }
 
         }
     }
-
 
 // header toevoegen
 include_once ("header.php");
@@ -36,7 +45,6 @@ include_once ("header.php");
     <div class="h1T">
         <h1>Reacties</h1>
     </div>            
-
 
     <form method="post">
         <!-- foutmelding -->
@@ -48,10 +56,9 @@ include_once ("header.php");
         <!-- reactie weergeven -->
         <?php
         $commentaar = new Commentaar();
-        //$commentaar->setTaakId();
+        $commentaar->setTaakId($taakId);
         $commentaar->reactieVanTaakWeergeven();
         ?>
-
 
         <textarea class="reactie" maxlength="150" name="reactie" placeholder="Voeg een reactie toe!"></textarea>
 
