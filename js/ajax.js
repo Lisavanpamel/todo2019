@@ -7,6 +7,30 @@ $('.check').on('click', function (e) {
         // de checkbox is aangevinkt (checked)
         // de waarde opvragen van de checkbox
         let taakId = $(this).attr('data-value');
+
+        // de waarde meegeven met ajax
+        $.ajax({
+            method: "POST",
+            url: "ajax/taakAanvinken.php",
+            data: { taakId: taakId }
+        })
+            // als ajax klaar is
+            .done(function (resultaat) {
+                console.log('res ' + resultaat);
+                if (resultaat.status == "success") {
+                    // resultaat van ajax is success, dus het is gelukt
+                    // verander taak van plaats
+                    console.log('verander van plaats');
+
+
+                    // zet de checkbox op checked
+                    $(this).prop('checked', true);
+                }
+            })
+            // als er een fout is
+            .fail(function (err) {
+                console.log(err.status);
+            });
     }
     
 });
