@@ -198,16 +198,10 @@ class Taak extends Database {
                                 // kijk de status van de taak na
                                 if ($resultaat['taakStatus'] != "Gedaan") {
                                         // status = nog de doen
-                                        $checkbox = '<label class="con">
-                                        <input type="checkbox" data-value="' .$resultaat['id'] . '">
-                                        <span class="checkmark"></span>
-                                        </label>';
+                                        $checkbox = '<input type="checkbox" class="check" data-value="' .$resultaat['id'] . '">';
                                 } else {
                                         // status = gedaan, checked toevoegen
-                                        $checkbox = '<label class="con">
-                                        <input checked type="checkbox" data-value="' .$resultaat['id'] . '">
-                                        <span class="checkmark"></span>
-                                        </label>';
+                                        $checkbox = '<input checked type="checkbox" class="check" data-value="' .$resultaat['id'] . '">';
                                 }
 // deadline tonen               // kijk of de taak een deadline heeft
                                 if ($resultaat['eindDatum'] == "000-00-00"){
@@ -219,8 +213,7 @@ class Taak extends Database {
                                 }
                                 echo
                                 '<div class="takenPerLijst">
-                                        <div class="media-input">'. $checkbox .'</div>
-
+                                        <div class="media-input"><label class="con check">'. $checkbox .'<span class="checkmark"></span></label></div>
                                         <a href="taakDetail.php"><p class="taakN">'. $resultaat['titel'].'</p> 
                                         <p class="datum"><strong>Startdatum:</strong> '. $resultaat['startDatum'].'</p>
                                         <p class="datum"><strong>Deadline:</strong> ' . $toonDeadline.'</p>
@@ -235,27 +228,23 @@ class Taak extends Database {
                 }
         }
 
-
-
-
         public function taakIsGedaan(){
                 $status = "Gedaan";
 
-                $query = $this->connecteren()->prepare("UPDATE taak SET taakStatus = :taakStatus WHERE id = :id AND gebruikersId = :gerbuikersId");
+                $query = $this->connecteren()->prepare("UPDATE taak SET taakStatus = :taakStatus WHERE id = :id AND gebruikersId = :gebruikersId");
                 $query->bindParam(':id', $this->taakId);
                 $query->bindParam(':taakStatus', $status);
-                $query->bindParam(':gebruikers', $this->gebruikersId);
+                $query->bindParam(':gebruikersId', $this->gebruikersId);
                 $query->execute();
         }
-        
         
         public function taakTeDoen(){
                 $status = "Te doen";
 
-                $query = $this->connecteren()->prepare("UPDATE taak SET taakStatus = :taakStatus WHERE id = :id AND gebruikersId = :gerbuikersId");
+                $query = $this->connecteren()->prepare("UPDATE taak SET taakStatus = :taakStatus WHERE id = :id AND gebruikersId = :gebruikersId");
                 $query->bindParam(':id', $this->taakId);
                 $query->bindParam(':taakStatus', $status);
-                $query->bindParam(':gebruikers', $this->gebruikersId);
+                $query->bindParam(':gebruikersId', $this->gebruikersId);
                 $query->execute();
         }
 
