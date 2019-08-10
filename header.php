@@ -1,4 +1,11 @@
-<!DOCTYPE html>
+<?php
+// bestanden toevoegen
+include_once("classes/Database.php");
+include_once("classes/Gebruiker.php");
+$gebruiker = new Gebruiker();
+$gebruiker->setGebruikersId($_SESSION['gebruiker']);
+
+?><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">

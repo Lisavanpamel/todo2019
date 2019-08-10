@@ -246,6 +246,14 @@ class Gebruiker extends Database {
                 return $result['id'];
         }
 
+        // functie wordt gebruikt bij het tonen van de gebruikersnaam in de header
+        function zoekGebruikersNaamViaId(){
+                $query = $this->connecteren()->prepare("SELECT naam FROM gebruiker WHERE id = :id");
+                $query->bindParam(':id', $this->gebruikersId);
+                $query->execute();
+                $resultaat = $query->fetch(PDO::FETCH_ASSOC);
+                return $resultaat['naam'];
+        }
 
     }
 

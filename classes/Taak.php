@@ -209,13 +209,21 @@ class Taak extends Database {
                                         <span class="checkmark"></span>
                                         </label>';
                                 }
+// deadline tonen               // kijk of de taak een deadline heeft
+                                if ($resultaat['eindDatum'] == "000-00-00"){
+                                        // geen deadline
+                                        $toonDeadline = 'Geen deadline';
+                                } else {
+                                        // wel deadline
+                                        $toonDeadline = $resultaat['eindDatum'];
+                                }
                                 echo
                                 '<div class="takenPerLijst">
                                         <div class="media-input">'. $checkbox .'</div>
 
                                         <a href="taakDetail.php"><p class="taakN">'. $resultaat['titel'].'</p> 
                                         <p class="datum"><strong>Startdatum:</strong> '. $resultaat['startDatum'].'</p>
-                                        <p class="datum"><strong>Deadline:</strong> ' . $resultaat['eindDatum'].'</p>
+                                        <p class="datum"><strong>Deadline:</strong> ' . $toonDeadline.'</p>
                                         <p class="datum"><strong>Werkuren:</strong> '. $resultaat['werkuren'].'</p></a>
                                         <img src="images/verwijderKruisje.png" class="verwijder" alt="lijst" height="14" width="14">
                                         <img src="images/bewerkingIcoon.png" class="bewerk" alt="lijst" height="14" width="14">
