@@ -69,7 +69,7 @@ include_once ("header.php");
 
         <!-- terugknop -->
         <div class="terugKnop">
-            <a href="taken.php?lijst=1" class="knopTer">Terug</a>
+            <a href="index.php" class="knopTer">Terug</a>
         </div>    
     </form>
 </section>
