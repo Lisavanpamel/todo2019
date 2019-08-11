@@ -115,6 +115,14 @@ class Commentaar extends Database {
                 }
         }
 
+        public function commentaarVerwijderenVanLijstId(){
+                $lijstId = $this->getLijstId();
+                
+                    $query = $this->connecteren()->prepare("DELETE FROM commentaar WHERE lijstId = :id"); 
+                    $query->bindParam(':id', $lijstId);
+                    $query->execute();
+        }
+
 }
 
 

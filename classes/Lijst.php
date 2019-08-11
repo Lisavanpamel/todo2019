@@ -103,7 +103,8 @@ class Lijst extends Database {
                                 <a href="taken.php?lijst=' . $resultaat['id'] . '" data-id="'. $resultaat['id'] . '">
                                 <p class="lijst">'. $resultaat['titel'].'</p></a>
                                 <!--<img src="images/profiel.png" alt="lijst" height="33" width="33">-->
-                                <img src="images/verwijder.png" class="verwijder" alt="lijst" height="33" width="33">
+                                
+                                <a href="lijstVerwijderen.php?post=' . $resultaat['id'] . '"><img src="images/verwijder.png" class="verwijder" alt="lijst" height="33" width="33"></a>
                                 </div>';
 
                                 /*'<div class="lijsten"><a href="taken.php">
@@ -114,4 +115,11 @@ class Lijst extends Database {
                         }
                 }
         }
+
+        public function lijstVerwijderen(){
+                $query = $this->connecteren()->prepare("DELETE FROM lijst WHERE id = :id");
+                $query->bindParam(':id', $this->lijstId);
+                $query->execute();
+        }
+
 }

@@ -263,6 +263,12 @@ class Taak extends Database {
                 $query->bindParam(':id', $this->taakId);
                 $query->execute();
         }
+
+        public function takenVerwijderenBijLijstId(){
+                $query = $this->connecteren()->prepare("DELETE FROM taak WHERE lijstId = :id"); 
+                $query->bindParam(':id', $this->lijstId);
+                $query->execute();
+        }
 }
 
 ?>
