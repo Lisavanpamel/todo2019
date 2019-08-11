@@ -123,6 +123,12 @@ class Commentaar extends Database {
                     $query->execute();
         }
 
+        public function CommentaarVerwijderenVanTaakId(){
+                    $query = $this->connecteren()->prepare("DELETE FROM commentaar WHERE taakId = :id"); 
+                    $query->bindParam(':id', $this->taakId);
+                    $query->execute();
+            }
+
 }
 
 

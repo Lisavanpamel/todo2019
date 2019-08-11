@@ -26,6 +26,7 @@ $taakId = $_GET['post'];
 
     try {
         $taak->taakVerwijderen();
+        $commentaar->CommentaarVerwijderenVanTaakId();
         header("Location: index.php");
     } catch (Exception $e) {
         $error = $e->getMessage();
