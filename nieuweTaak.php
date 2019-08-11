@@ -121,10 +121,10 @@ include_once ("header.php");
             <input class="nieuweTaak" type="submit" value="bevestigen" name="KnopTaak">
         </div>
 
-        <!-- terugknop 
+        <!-- terugknop -->   
         <div class="terugKnop">
-            <a href="taken.php" class="knopTer">Terug</a>
-        </div> -->   
+            <a href="taken.php?lijst=1" class="knopTer">Terug</a>
+        </div> 
     </form>
 </section>
 

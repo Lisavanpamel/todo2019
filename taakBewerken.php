@@ -12,10 +12,9 @@ session_start();
 $taakId = $_GET['post'];
 
 // gebruikersId opvragen
-$gebruiker = new Gebruiker();
 $gebruikersId = $_SESSION['gebruiker'];
 
-    if (isset($_POST['knopTaak'])){
+    if (isset($_POST['KnopTaak'])){
         echo "ok";
         $titel = $_POST['taakNaam'];
         $werkuren = $_POST['werkuren'];

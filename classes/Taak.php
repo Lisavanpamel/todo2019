@@ -307,7 +307,7 @@ class Taak extends Database {
                                 </div>
 
                                 <div class="formuliergroep">
-                                <input class="formulier" type="text" name="einddatum" placeholder="Einddatum (JJJJ-mm-dd) value="'. $resultaat['eindDatum'].'">
+                                <input class="formulier" type="text" name="einddatum" placeholder="Einddatum (JJJJ-mm-dd)" value="'. $resultaat['eindDatum'].'">
                                 </div>
 
                                 <div class="formuliergroep">
@@ -334,6 +334,39 @@ class Taak extends Database {
                     $query->bindParam(':werkuren', $werkuren);
                     $query->bindParam(':id', $taakId);
                     $query->execute();
+        }
+
+// files toevoegen
+        // bestanden controleren op PDF
+        public function controleerPdfFormaat(){
+                // alleen pdf is toegestaan
+
+                // vraag de extensie op van het bestand (.pdf)
+                $bestandExtensie = explode('.', $this->bestand);
+                $bestandExtensie = strtolower(end($bestandExtensie));
+
+                echo $bestandExtensie;
+                if($bestandExtensie != "pdf") {
+                        throw new Exception("Het bestand moet een PDF zijn!");
+                }
+        }
+
+        // PDF bestand grootte controleren
+        public function controleerPdfGrootte($bestand){
+                // bestand moet kleiner zijn dan 500kb
+                if ($bestand > 500000) {
+                        throw new Exception("Het bestand is te groot!");
+                }
+        }
+
+        // bestand toevoegen
+        public function bestandToevoegen(){
+                $id = $this->getTaakId();
+                $bestand = $this->getBestand();
+                $query = $this->connecteren()->prepare("UPDATE taak SET bestand = :bestand WHERE id = :id");
+                $query->bindParam(':id', $id);
+                $query->bindParam(':bestand', $bestand);
+                $query->execute();
         }
 
 }
