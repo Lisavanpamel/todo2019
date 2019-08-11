@@ -1,6 +1,7 @@
 <?php
 // bestanden toevoegen 
 include_once("classes/Database.php");
+include_once("classes/Lijst.php");
 include_once("classes/Taak.php");
 include_once("classes/Gebruiker.php");
 include_once("classes/Commentaar.php");
@@ -18,7 +19,7 @@ $lijstId = $_GET['post'];
     // lijst verwijderen
     $lijst = new Lijst();
     $lijst->setLijstId($lijstId);
-    //$lijst->setGebruikersId($gebruiker);
+    $lijst->setGebruikersId($gebruiker);
 
     // Verwijder alle taken binnen de lijst
     $taak = new Taak();
