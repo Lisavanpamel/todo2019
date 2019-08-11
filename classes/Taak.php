@@ -235,7 +235,10 @@ class Taak extends Database {
                                         <p class="datum"><strong>Werkuren:</strong> '. $resultaat['werkuren'].'</p></a>
                                         <a href="taakVerwijderen.php?post=' . $resultaat['id'] . '"><img src="images/verwijderKruisje.png" class="verwijder" alt="lijst" height="14" width="14"></a>
                                         <a href="taakBewerken.php?post=' . $resultaat['id'] . '"><img src="images/bewerkingIcoon.png" class="bewerk" alt="lijst" height="14" width="14"></a>
-                                        <a href="bestandToevoegen.php?post=' . $resultaat['id'] .'"><img src="images/bewerkingIcoon.png" class="bestand" alt="lijst" height="14" width="14"> bestand</a>
+                                        
+                                        <div class="paperclip">
+                                                <a href="bestandToevoegen.php?post=' . $resultaat['id'] .'"><img src="images/bewerkingIcoon.png" class="bestand" alt="lijst" height="14" width="14"> bestand</a>
+                                        </div>
                                 </div>';
 
 
@@ -312,6 +315,26 @@ class Taak extends Database {
                                 </div>';
                 }
         }
+
+        /*public function taakBewerken(){
+                $id = $this->getTaakId(); 
+                $titel = $this->getTitel();
+                $gebruikersId = $this->getGebruikersId();
+                $lijstId = $this->getLijstId();
+                $begindatum = $this->getBegindatum();
+                $einddatum = $this->getEinddatum(); 
+                $werkuren = $this->getWerkuren(); 
+               
+                    $query = $this->connecteren()->prepare("UPDATE taak SET titel = :titel, gebruikersID = :gebruikersID, lijstId = :lijstId, startDatum = :startDatum, eindDatum = :eindDatum, werkuren = :werkuren WHERE id =:id"); 
+                    $query->bindParam(':id', $id); 
+                    $query->bindParam(':titel', $titel);
+                    $query->bindParam(':gebruikersID', $gebruikersId);
+                    $query->bindParam(':lijstId', $lijstId);
+                    $query->bindParam(':startDatum', $begindatum);
+                    $query->bindParam(':eindDatum', $einddatum);
+                    $query->bindParam(':werkuren', $werkuren);
+                    $query->execute();
+            }*/
 
 }
 

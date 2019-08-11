@@ -510,6 +510,18 @@ textarea {
 /* //////// einde taakDetail.php //////// */
 
 
+/* //////// klasse Taak.php //////// */
+/* paperclip */
+.bestand {
+    margin-left: 54px;
+    margin-top: 10px;
+}
+
+.paperclip a {
+    color: #4832F1;
+}
+/* //////// einde classe Taak.php //////// */
+
 
 
 
