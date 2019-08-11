@@ -237,7 +237,7 @@ class Taak extends Database {
                                         <a href="taakBewerken.php?post=' . $resultaat['id'] . '"><img src="images/bewerkingIcoon.png" class="bewerk" alt="lijst" height="14" width="14"></a>
                                         
                                         <div class="paperclip">
-                                                <a href="bestandToevoegen.php?post=' . $resultaat['id'] .'"><img src="images/bewerkingIcoon.png" class="bestand" alt="lijst" height="14" width="14"> bestand</a>
+                                                <a href="bestandToevoegen.php?post=' . $resultaat['id'] .'"><img src="images/paperclip.png" class="bestand" alt="lijst" height="14" width="14"> bestand</a>
                                         </div>
                                 </div>';
 

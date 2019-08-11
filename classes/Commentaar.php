@@ -104,11 +104,9 @@ class Commentaar extends Database {
 
                                 while ($resultaatGebruiker = $q->fetch(PDO::FETCH_ASSOC)) {
                                         echo
-                                        '<div class="media reactions">
-                                                <div class= media-body">
-                                                        <h5>'.$resultaatGebruiker['naam'].'</h5>
-                                                        <p class="comment">' . $resultaat['reactie'] . '</p>
-                                                </div>
+                                        '<div class="reactieBody">
+                                                <h5>'.$resultaatGebruiker['naam'].'</h5>
+                                                <p class="comment">' . $resultaat['reactie'] . '</p>
                                         </div>';
                                 }
                         }

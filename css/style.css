@@ -523,6 +523,21 @@ textarea {
 /* //////// einde classe Taak.php //////// */
 
 
+/* //////// klasse Commentaar.php //////// */
+/* reacties op taken */
+.reactieBody {
+    max-width: 410px;
+    background-color: #F0EEED;
+    margin: 0px 50px 20px 40px;
+    font-size: 0.9em;
+    padding: 0px 15px;
+    border: 2px solid rgb(194, 192, 191);
+    border-radius: 4px;
+}
+
+.reactieBody h5 {
+    color: #4832F1;
+}
 
 
 
