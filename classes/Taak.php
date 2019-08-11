@@ -10,6 +10,7 @@ class Taak extends Database {
         private $werkuren;
         private $status;
         private $taakId;
+        private $bestand;
         
         
 // titel
@@ -116,6 +117,18 @@ class Taak extends Database {
                 return $this;
         }
 
+// bestand
+        public function getBestand()
+        {
+                return $this->bestand;
+        }
+
+        public function setBestand($bestand)
+        {
+                $this->bestand = $bestand;
+
+                return $this;
+        }
 
         
 /* ////////////////// functies ////////////////// */
@@ -222,6 +235,7 @@ class Taak extends Database {
                                         <p class="datum"><strong>Werkuren:</strong> '. $resultaat['werkuren'].'</p></a>
                                         <a href="taakVerwijderen.php?post=' . $resultaat['id'] . '"><img src="images/verwijderKruisje.png" class="verwijder" alt="lijst" height="14" width="14"></a>
                                         <a href="taakBewerken.php?post=' . $resultaat['id'] . '"><img src="images/bewerkingIcoon.png" class="bewerk" alt="lijst" height="14" width="14"></a>
+                                        <a href="bestandToevoegen.php?post=' . $resultaat['id'] .'"><img src="images/bewerkingIcoon.png" class="bestand" alt="lijst" height="14" width="14"> bestand</a>
                                 </div>';
 
 
@@ -298,6 +312,7 @@ class Taak extends Database {
                                 </div>';
                 }
         }
+
 }
 
 ?>
