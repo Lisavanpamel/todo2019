@@ -38,9 +38,9 @@ include_once ("header.php");
     </div>
 
 
-    <div class="h2">
+    <!--<div class="h2">
             <h2>Te doen</h2>
-    </div>
+    </div>-->
        
 
     <!-- taken uit database halen -->
@@ -55,9 +55,9 @@ include_once ("header.php");
         $taak->toonTaken();
     ?>
         
-        <div class="h2">
+        <!--<div class="h2">
             <h2>Gedaan</h2>
-        </div>
+        </div>-->
 
         <!-- moet nog naar klasse verplaatsen -->
         <!--<div class="takenPerLijstT">
