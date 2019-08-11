@@ -214,16 +214,14 @@ class Taak extends Database {
                                 echo
                                 '<div class="takenPerLijst">
                                         <div class="media-input"><label class="con check">'. $checkbox .'<span class="checkmark"></span></label></div>
-
-
                                         <a href="taken.php?lijst=' . $resultaat['id'] . '" data-id="'. $resultaat['id'] . '">
                                         <a href="taakDetail.php?taak=' . $resultaat['id'] . '" data-id="'. $resultaat['id'] . '">
                                         <p class="taakN">'. $resultaat['titel'].'</p>
                                         <p class="datum"><strong>Startdatum:</strong> '. $resultaat['startDatum'].'</p>
                                         <p class="datum"><strong>Deadline:</strong> ' . $toonDeadline.'</p>
                                         <p class="datum"><strong>Werkuren:</strong> '. $resultaat['werkuren'].'</p></a>
-                                        <img src="images/verwijderKruisje.png" class="verwijder" alt="lijst" height="14" width="14">
-                                        <img src="images/bewerkingIcoon.png" class="bewerk" alt="lijst" height="14" width="14">
+                                        <a href="taakVerwijderen.php?post=' . $resultaat['id'] . '"><img src="images/verwijderKruisje.png" class="verwijder" alt="lijst" height="14" width="14"></a>
+                                        <a href="taakBewerken.php?post=' . $resultaat['id'] . '"><img src="images/bewerkingIcoon.png" class="bewerk" alt="lijst" height="14" width="14"></a>
                                 </div>';
 
 
@@ -260,6 +258,11 @@ class Taak extends Database {
                 $query->execute();
         }
 
+        public function taakVerwijderen(){
+                $query = $this->connecteren()->prepare("DELETE FROM taak WHERE id = :id");
+                $query->bindParam(':id', $this->taakId);
+                $query->execute();
+        }
 }
 
 ?>
