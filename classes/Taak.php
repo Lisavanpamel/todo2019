@@ -316,25 +316,25 @@ class Taak extends Database {
                 }
         }
 
-        /*public function taakBewerken(){
-                $id = $this->getTaakId(); 
+        public function taakBewerken(){
+                echo 'ok';
+
                 $titel = $this->getTitel();
-                $gebruikersId = $this->getGebruikersId();
-                $lijstId = $this->getLijstId();
-                $begindatum = $this->getBegindatum();
-                $einddatum = $this->getEinddatum(); 
                 $werkuren = $this->getWerkuren(); 
-               
-                    $query = $this->connecteren()->prepare("UPDATE taak SET titel = :titel, gebruikersID = :gebruikersID, lijstId = :lijstId, startDatum = :startDatum, eindDatum = :eindDatum, werkuren = :werkuren WHERE id =:id"); 
-                    $query->bindParam(':id', $id); 
+                $gebruiker = $this->getGebruikersId();
+                $eindDatum = $this->getEinddatum();
+                $taakId = $this->getTaakId();
+
+                echo $gebruiker;
+                
+                    $query = $this->connecteren()->prepare("UPDATE taak SET titel = :titel, gebruikersID = :gebruikersID, eindDatum = :eindDatum, werkuren = :werkuren WHERE id =:id");
                     $query->bindParam(':titel', $titel);
-                    $query->bindParam(':gebruikersID', $gebruikersId);
-                    $query->bindParam(':lijstId', $lijstId);
-                    $query->bindParam(':startDatum', $begindatum);
-                    $query->bindParam(':eindDatum', $einddatum);
+                    $query->bindParam(':gebruikersID', $gebruiker);
+                    $query->bindParam(':eindDatum', $eindDatum);
                     $query->bindParam(':werkuren', $werkuren);
+                    $query->bindParam(':id', $taakId);
                     $query->execute();
-            }*/
+        }
 
 }
 
