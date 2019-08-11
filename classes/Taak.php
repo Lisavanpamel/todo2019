@@ -258,6 +258,7 @@ class Taak extends Database {
                 $query->execute();
         }
 
+        // taak verwijderen
         public function taakVerwijderen(){
                 $query = $this->connecteren()->prepare("DELETE FROM taak WHERE id = :id");
                 $query->bindParam(':id', $this->taakId);
@@ -268,6 +269,34 @@ class Taak extends Database {
                 $query = $this->connecteren()->prepare("DELETE FROM taak WHERE lijstId = :id"); 
                 $query->bindParam(':id', $this->lijstId);
                 $query->execute();
+        }
+
+        // taak bewerken
+        public function toonEnBewerkTaak(){
+                $query = $this->connecteren()->prepare("SELECT * FROM taak WHERE id = :id"); 
+                $query->bindParam(':id', $this->taakId);
+                $query->execute();
+
+                while ($resultaat = $query->fetch(PDO::FETCH_ASSOC)) {
+                        // lijstId opvragen van tabel taak
+                        $lijstId = $resultaat['lijstId'];
+
+                        echo '<div class="formuliergroep">
+                                <input class="formulier" type="text" name="taakNaam" placeholder="Taak naam" value="'. $resultaat['titel'].'">
+                                </div>
+
+                                <div class="formuliergroep">
+                                <input class="formulier" type="text" name="werkuren" placeholder="Werkuren" value="'. $resultaat['werkuren'].'">
+                                </div>
+
+                                <div class="formuliergroep">
+                                <input class="formulier" type="text" name="einddatum" placeholder="Einddatum (JJJJ-mm-dd) value="'. $resultaat['eindDatum'].'">
+                                </div>
+
+                                <div class="formuliergroep">
+                                <input class="nieuweTaak" type="submit" value="Bewerken" name="KnopTaak">
+                                </div>';
+                }
         }
 }
 
