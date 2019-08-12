@@ -217,7 +217,7 @@ class Taak extends Database {
                                         $checkbox = '<input checked type="checkbox" class="check" data-value="' .$resultaat['id'] . '">';
                                 }
 // deadline tonen               // kijk of de taak een deadline heeft
-                                if ($resultaat['eindDatum'] == "000-00-00"){
+                                if ($resultaat['eindDatum'] == "0000-00-00"){
                                         // geen deadline
                                         $toonDeadline = 'Geen deadline';
                                 } else {
@@ -370,7 +370,7 @@ class Taak extends Database {
                 $query->execute();
         }
 
-        
+
 // files (PDF) Verwijderen
         public function verwijderBestandVanTaak(){
                 $id = $this->getTaakId();

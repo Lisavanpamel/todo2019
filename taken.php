@@ -34,7 +34,7 @@ include_once ("header.php");
 
 <section id="afmeting">
     <div class="h1">
-        <h1>Alle taken</h1>
+        <h1>Mijn taken</h1>
     </div>
 
 

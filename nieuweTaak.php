@@ -51,7 +51,7 @@ session_start();
         $taak->setGebruikersId($gebruikersId);
 
         // deadline is optioneel, kijken of deadline is ingegeven
-        if (empty($_POST['deadline'])){
+        if (empty($_POST['einddatum'])){
             // geen deadline, taak toevoegen aan database zonder deadline
             try {
                 $taak->nieuweTaakToevoegenZonderDeadline();
@@ -60,7 +60,7 @@ session_start();
             }
         } else {
             // deadline is ingegeven
-            $deadline = $_POST['deadline'];
+            $deadline = $_POST['einddatum'];
             // taak toevoegen aan database met deadline
             try {
                 // kijk na of de dealine niet in het verleden is
