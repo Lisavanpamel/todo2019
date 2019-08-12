@@ -512,13 +512,19 @@ textarea {
 
 /* //////// klasse Taak.php //////// */
 /* paperclip */
-.bestand {
+.paperclip {
+    width: 300px;
     margin-left: 54px;
-    margin-top: 10px;
+    padding-top: 10px;
 }
 
 .paperclip a {
     color: #4832F1;
+    font-size: 0.9em;
+}
+
+.bestandVer {
+    margin-left: 15px;
 }
 /* //////// einde classe Taak.php //////// */
 

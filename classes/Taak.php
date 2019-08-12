@@ -238,9 +238,8 @@ class Taak extends Database {
                                         
                                         <div class="paperclip">
                                                 <a href="bestandToevoegen.php?post=' . $resultaat['id'] .'"><img src="images/paperclip.png" class="bestand" alt="lijst" height="14" width="14"> bestand</a>
+                                                <a href="bestandVerwijderen.php?post=' . $resultaat['id'] .'"><img src="images/paperclip.png" class="bestandVer" alt="lijst" height="14" width="14"> bestand verwijderen</a>
                                         </div>
-
-                                        <a href="bestandVerwijderen.php?post=' . $resultaat['id'] .'"><img src="images/paperclip.png" class="bestand" alt="lijst" height="14" width="14"> bestand verwijderen</a>
                                 </div>';
 
 
@@ -338,7 +337,7 @@ class Taak extends Database {
                     $query->execute();
         }
 
-// files toevoegen
+// files (PDF) toevoegen
         // bestanden controleren op PDF
         public function controleerPdfFormaat(){
                 // alleen pdf is toegestaan
@@ -365,6 +364,18 @@ class Taak extends Database {
         public function bestandToevoegen(){
                 $id = $this->getTaakId();
                 $bestand = $this->getBestand();
+                $query = $this->connecteren()->prepare("UPDATE taak SET bestand = :bestand WHERE id = :id");
+                $query->bindParam(':id', $id);
+                $query->bindParam(':bestand', $bestand);
+                $query->execute();
+        }
+
+        
+// files (PDF) Verwijderen
+        public function verwijderBestandVanTaak(){
+                $id = $this->getTaakId();
+                $bestand = "";
+
                 $query = $this->connecteren()->prepare("UPDATE taak SET bestand = :bestand WHERE id = :id");
                 $query->bindParam(':id', $id);
                 $query->bindParam(':bestand', $bestand);
