@@ -382,6 +382,22 @@ class Taak extends Database {
                 $query->execute();
         }
 
+
+// geen dubbele taken met eenzelfde naam
+        public function geenDubbeleTaakBinnenEenLijst(){
+                // Controleren op geen dubbele namen
+                $query = $this->connecteren()->prepare("SELECT * FROM taak WHERE lijstId = :lijstId");
+                $query->bindParam(':lijstId', $this->lijstId);
+                $query->execute();
+                $resultaat = $query->fetch(PDO::FETCH_ASSOC);
+
+                // Controleer op dubbele taken in een lijst
+                if ($resultaat['titel'] != $this->titel) {
+                    return true;  
+                } else {
+                    throw new Exception("Deze taak bestaat al, kies een andere naam.");     
+                }
+        } 
 }
 
 ?>
