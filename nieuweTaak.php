@@ -54,6 +54,7 @@ session_start();
         if (empty($_POST['einddatum'])){
             // geen deadline, taak toevoegen aan database zonder deadline
             try {
+                $taak->geenDubbeleTaakBinnenEenLijst();
                 $taak->nieuweTaakToevoegenZonderDeadline();
             } catch (Exception $e) {
                 $foutmelding = $e->getMessage();
@@ -67,6 +68,7 @@ session_start();
                 $taak->setEinddatum($deadline);
                 $taak->controleerDeadline();
                 // voeg taak toe met deadline
+                $taak->geenDubbeleTaakBinnenEenLijst();
                 $taak->nieuweTaakToevoegenMetDeadline();
             } catch (Exception $e) {
                 $foutmelding = $e->getMessage();

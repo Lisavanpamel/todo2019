@@ -392,10 +392,8 @@ class Taak extends Database {
 
                 while ($resultaat = $query->fetch(PDO::FETCH_ASSOC)){
                         // Controleer op dubbele taken in een lijst
-                        if ($resultaat['titel'] != $this->titel) {
-                        return true;  
-                        } else {
-                        throw new Exception("Deze taak bestaat al, kies een andere naam.");    
+                        if ($resultaat['titel'] == $this->getTitel()) {
+                            throw new Exception("Deze taak bestaat al, kies een andere naam.");  
                         }
                 }
         } 
