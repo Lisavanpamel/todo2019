@@ -32,7 +32,7 @@ session_start();
             $lijstId = $lijst->getLijstIdVanDatabase();
             $lijst->setLijstId($lijstId);
             $lijst->toevoegenAanTabelLijstGebruiker();
-            //header("Location: index.php");
+            header("Location: index.php");
         } catch (Exception $e) {
             $foutmelding = $e->getMessage();
         }
