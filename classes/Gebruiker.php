@@ -12,6 +12,8 @@ class Gebruiker extends Database {
         private $beheerder;
         private $beheerderId;
         private $hash;
+        // extra variabelen voor beheerder
+        private $isBeheerder;
      
         
 // email
@@ -161,6 +163,20 @@ class Gebruiker extends Database {
                 return $this;
         }
 
+// isBeheerder
+        public function getIsBeheerder()
+        {
+                return $this->isBeheerder;
+        }
+
+        public function setIsBeheerder($isBeheerder)
+        {
+                $this->isBeheerder = $isBeheerder;
+
+                return $this;
+        }
+
+
 /* ////////////////// functies ////////////////// */
         function aanmelden() {
             // sessie starten
@@ -253,6 +269,21 @@ class Gebruiker extends Database {
                 $query->execute();
                 $resultaat = $query->fetch(PDO::FETCH_ASSOC);
                 return $resultaat['naam'];
+        }
+
+
+// functies voor beheerder
+        // kijk na of de inloggegevens van een beheerder is
+        function controleerBeheerder(){
+                $query = $this->connecteren()->prepare("SELECT * FROM gebruiker WHERE id = :id");
+                $query->bindParam(':id', $this->gebruikersId);
+                $query->execute();
+                $resultaat = $query->fetch(PDO::FETCH_ASSOC);
+                
+                if ($resultaat['isBeheerder'] == 1) {
+                        // gebruiker is een beheerder                      
+                        return true;
+                }
         }
 
     }

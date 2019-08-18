@@ -38,9 +38,14 @@ include_once("classes/Gebruiker.php");
             // aanmelden
             $gebruiker->aanmelden();
 
-            // naar de homepage
-            echo "je ben aangemeld!";
-            header("Location: index.php");
+            //kijk na of gebruiker een beheerder is
+            if ($gebruiker->controleerBeheerder()){
+                // toon beheerderscherm
+                header("Location: beheerdersScherm.php");
+            } else {
+                // toon gebruikersscherm homepage
+                header("Location: index.php");
+            }
 
         } catch (Exception $e) {
             // toon foutmelding

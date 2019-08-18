@@ -1,6 +1,6 @@
 /* //////// header (Lisa Van Pamel, Uitloggen, ...) //////// */
 header {
-    padding-top: 70px; /*80*/
+    /**padding-top: 70px; /* anders tot tegen de url-balk */
     max-width: 410px;
     margin: 0px auto; 
 }
@@ -9,7 +9,8 @@ header {
 /* //////// container //////// */
 #afmeting {
     max-width: 410px;
-    height: 510px; /*494*/
+    /**height: 510px; /*494*/
+    min-height: 534px;
     margin: 0px auto;
     background-color: #fff;
     /* ANDERS SPATIE TUSSEN HEADER EN CONTAINER */
@@ -24,7 +25,7 @@ header {
     margin: 0px auto;
 
     /*padding-top: 170px; /* 250px */
-    margin-top: 80px;
+    /**margin-top: 80px;*/
 
     background-color: #fff;
     box-shadow:  10px  10px  10px  1px #1F3F6D;
@@ -320,7 +321,7 @@ body{
 }
 
 .terugKnop {
-    padding-top: 20px;
+    padding: 20px; /* padding-top: 20px;*/
 }
 
 .knopTer {

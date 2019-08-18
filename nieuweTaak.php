@@ -56,6 +56,8 @@ session_start();
             try {
                 $taak->geenDubbeleTaakBinnenEenLijst();
                 $taak->nieuweTaakToevoegenZonderDeadline();
+
+                header("Location: index.php");
             } catch (Exception $e) {
                 $foutmelding = $e->getMessage();
             }
@@ -70,6 +72,8 @@ session_start();
                 // voeg taak toe met deadline
                 $taak->geenDubbeleTaakBinnenEenLijst();
                 $taak->nieuweTaakToevoegenMetDeadline();
+
+                header("Location: index.php");
             } catch (Exception $e) {
                 $foutmelding = $e->getMessage();
             }
@@ -125,7 +129,7 @@ include_once ("header.php");
 
         <!-- terugknop -->   
         <div class="terugKnop">
-            <a href="taken.php?lijst=1" class="knopTer">Terug</a>
+            <a href="index.php" class="knopTer">Terug</a>
         </div> 
     </form>
 </section>
