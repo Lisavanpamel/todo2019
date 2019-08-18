@@ -20,7 +20,7 @@ $('.check').on('click', function (e) {
                 if (resultaat.status == "success") {
                     // resultaat van ajax is success, dus het is gelukt
                     // verander taak van plaats
-                    console.log('verander van plaats');
+                    console.log('gelukt');
 
 
                     // zet de checkbox op checked
