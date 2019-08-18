@@ -41,7 +41,7 @@ if (isset($_POST['KnopBestand'])){
             move_uploaded_file($_FILES['bestand']['tmp_name'], $bestandslocatie);
 
             $taak->bestandToevoegen();
-            //header("Location: index.php");
+            header("Location: index.php");
         } catch (Exception $e) {
             $foutmelding = $e->getMessage();
         }

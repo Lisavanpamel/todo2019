@@ -239,6 +239,7 @@ class Taak extends Database {
                                         <div class="paperclip">
                                                 <a href="bestandToevoegen.php?post=' . $resultaat['id'] .'"><img src="images/paperclip.png" class="bestand" alt="lijst" height="14" width="14"> bestand</a>
                                                 <a href="bestandVerwijderen.php?post=' . $resultaat['id'] .'"><img src="images/paperclip.png" class="bestandVer" alt="lijst" height="14" width="14"> bestand verwijderen</a>
+                                                <a href="' . $resultaat['bestand'] . '"> '. $resultaat['bestand'] .'</a>
                                         </div>
                                 </div>';
 
