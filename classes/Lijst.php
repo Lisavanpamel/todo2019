@@ -93,7 +93,8 @@ class Lijst extends Database {
 
                 // toon bericht als er nog geen lijsten bestaan
                 if($query->rowCount() == 0){
-                        echo '<p class="error">Je hebt nog geen lijsten aangemaakt.</p>';
+                        echo 
+                        '<div class="error"><p>Je hebt nog geen lijsten aangemaakt.</p></div>';
                 } else {
                         // toon alle lijsten op index.php
                         while ($resultaat = $query->fetch(PDO::FETCH_ASSOC)) {
